@@ -1,7 +1,8 @@
-# Fill Flutter README
- 
+# Fill Flutter Dart Vs Code Extension
 Fill Flutter Have Pre_Build Widgets For Save Time
 
+<b> Languages Includeds </b>
+<code> Html Tags, js, NodeJs, .md, Json, .vsixmanifest </code>
 
 ## Features
  * Fill All Widgets of Flutter And Dart
@@ -10,10 +11,11 @@ like: `form validation`, `getstate managments`, `buttons`, `tab controller`, `ca
 And Much More  
 ❤❤❤❤❤❤ 
 
- <!-- 
- <img src="" width="60"/>
- \!\[feature X\]\(img2.png\)
- -->
+# MarketPlace Demo Name
+<center> <img src="demo 1.png" width="90%"/> </center>
+
+## its not a original gif image Demo But All Widgets generated Like This
+![snippets in action](https://github.com/HassanAmeer/Vs-code-Extension-For-Flutter/blob/main/flutter-snippet-sample.gif)
 
 
 > Tip ==> For Use Fill Snippets Write ::  `-anywidgetsname`   and Its Shown in Snippets Select Thats you Wants its Build A Whole Widgets
@@ -21,22 +23,23 @@ And Much More
 
 ```dart
 // Exmp: -button 
- ElevatedButton( 
-    onPressed: () {}, 
-      child: Text('click_me'), 
-      style: ElevatedButton.styleFrom( 
-        padding: EdgeInsets.all(10), 
-        fixedSize: Size(100, 40), 
-        elevation: 45,  
-        shadowColor: Colors.redAccent, 
-        side: BorderSide( 
-          width: 4, 
-          style: BorderStyle.solid, 
-          color: Colors.pink, 
-          strokeAlign: StrokeAlign.outside), 
-          shape: StadiumBorder(side: BorderSide.none), 
-       ), 
-     ), 
+   ElevatedButton(   
+   onPressed: () { 
+     print(' Button Clicked'); 
+   }, 
+   child: Text('click_me'), 
+   style: ElevatedButton.styleFrom( 
+     padding: EdgeInsets.all(10), 
+     fixedSize: Size(100, 40), 
+     elevation: 30, 
+     shadowColor: Color.fromARGB(255, 6, 0, 55), 
+     side: BorderSide( 
+         width: 2, 
+         style: BorderStyle.solid, 
+         strokeAlign: StrokeAlign.inside), 
+     shape: StadiumBorder(side: BorderSide.none), 
+   ), 
+ ), 
 ```
 
 
