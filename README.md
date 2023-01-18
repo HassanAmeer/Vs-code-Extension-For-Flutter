@@ -1,8 +1,10 @@
 # Vs-code-Extension-For-Flutter
+## Build Flutter Widgets Fastly
 easy to understand all codes every One Can Study These File Codes
+
 <code> Html Tags Js NodeJs json .vsixmanifest .md  </code>
 
-# Build Flutter Widgets Fastly
+
 
 
 ## available On Vs Code MarketePlace
@@ -17,4 +19,5 @@ easy to understand all codes every One Can Study These File Codes
 
 ## fill by Whole Widgets Demo Like This
 <i> in this Gif Dem0 not a original but build widgets fastly like this </i>
-<img src='flutter-snippet-sample.gif'>
+<br></br>
+![snippets in action](https://github.com/HassanAmeer/Vs-code-Extension-For-Flutter/blob/main/flutter-snippet-sample.gif)
