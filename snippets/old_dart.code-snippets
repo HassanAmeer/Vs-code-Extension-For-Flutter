@@ -1,0 +1,1242 @@
+
+
+
+{
+
+
+
+
+
+
+
+// 1
+
+
+    "Elevated button" : {
+       "prefix": "-button",
+       "scope": "dart",
+        "body": [
+                                 
+   " /* its take child */ ",
+   "      ElevatedButton( ",
+   "       onPressed: () {}, ",
+   "        child: Text('click_me'), ",
+    "       style: ElevatedButton.styleFrom( ",
+    "       padding: EdgeInsets.all(10), ",
+    "       fixedSize: Size(100, 40), ",
+    "        elevation: 45,  ",
+    "        shadowColor: Colors.redAccent, ",
+    "        side: BorderSide( ",
+    "           width: 4, ",
+    "        style: BorderStyle.solid, ",
+    "        color: Colors.pink, ",
+    "        strokeAlign: StrokeAlign.outside), ",
+    "        shape: StadiumBorder(side: BorderSide.none), ",
+    "        ), ",
+    "      ), ",
+
+      ],
+        
+        "description": "fill elevated button"
+    },
+
+   
+
+
+
+
+
+
+
+
+
+
+
+  // 2  
+
+    "Bottomnavbar Docked" : {
+       "prefix": "-Bottomnavbardocked",
+       "scope": "dart",
+        "body": [
+        "    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,  ",
+        "    bottomNavigationBar: BottomAppBar( ",
+        "      shape: const CircularNotchedRectangle(), ",
+        "      child: BottomNavigationBar( ",
+        "        selectedItemColor: Colors.pink.shade900, ",
+        "        unselectedItemColor: Colors.amber.shade700, ",
+        "        selectedFontSize: 10, ",
+        "        unselectedFontSize: 7, ",
+        "        currentIndex: 0, ",
+        "        enableFeedback: true, ",
+        "        elevation: 30, ",
+        "        // landscapeLayout: BottomNavigationBarLandscapeLayout.centered, ",
+        "        items: <BottomNavigationBarItem>[ ",
+        "          const BottomNavigationBarItem( ",
+        "              icon: Icon(Icons.home), ",
+        "              activeIcon: Icon(Icons.maps_home_work_rounded), ",
+        "              tooltip: 'home_tooltip', ",
+        "              label: 'Home_Label'), ",
+        "          const BottomNavigationBarItem( ",
+        "              icon: Icon(Icons.video_call), ",
+        "              activeIcon: Icon(Icons.videocam_rounded), ",
+        "              tooltip: 'tooltip', ",
+        "              label: 'Label'), ",
+        "          const BottomNavigationBarItem( ",
+        "              icon: Icon(Icons.add_a_photo), ",
+        "              activeIcon: Icon(Icons.add_a_photo_outlined), ",
+        "              tooltip: 'photo_tooltip', ",
+        "              label: 'photo_Label'), ",
+        "        ], ",
+        "        onTap: ((value) { ",
+        "          print(value); ",
+        "        }), ",
+        "      ), ",
+        "    ), ",
+        "    floatingActionButton: FloatingActionButton( ",
+        "      onPressed: () {}, ",
+        "      hoverColor: Colors.amberAccent, ",
+        "      child: Icon(Icons.local_post_office_rounded), ",
+        "      tooltip: 'why open mail page', ",
+        "      shape: ",
+        "          BeveledRectangleBorder(borderRadius: BorderRadius.circular(20)), ",
+        "    ), ",
+
+      ],
+        
+        "description": "Bottomnavbar FAB Docked"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  // 3  
+
+    "Bottomnavbar notched" : {
+       "prefix": "-Bottomnavbar Notched",
+       "scope": "dart",
+        "body": [
+      "      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,        ",
+      "      bottomNavigationBar: BottomAppBar(    ",
+      "        notchMargin: 10,    ",
+      "        shape: CircularNotchedRectangle(),    ",
+      "        child: Row(    ",
+      "          mainAxisAlignment: MainAxisAlignment.spaceEvenly,    ",
+      "          crossAxisAlignment: CrossAxisAlignment.end,    ",
+      "          children: [    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.home),    ",
+      "              tooltip: 'home_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.video_call),    ",
+      "              tooltip: 'video_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.add_a_photo),    ",
+      "              tooltip: 'photo_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.arrow_forward),    ",
+      "              tooltip: 'arrow_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "          ],    ",
+      "        ),    ",
+      "      ),    ",
+      "      floatingActionButton: FloatingActionButton(    ",
+      "        mini: true,    ",
+      "        onPressed: () {},    ",
+      "        hoverColor: Colors.amberAccent,    ",
+      "        child: Icon(Icons.local_post_office_rounded),    ",
+      "        tooltip: 'why open mail page',    ",
+      "        shape: RoundedRectangleBorder(    ",
+      "            borderRadius: BorderRadius.all(Radius.circular(50))),    ",
+      "      ),    ",
+
+      ],
+        
+        "description": "Bottomnavbar with FAB Notched"
+    },
+
+
+
+
+
+
+
+  // 4  
+
+    "Tab Controller" : {
+       "prefix": "-Tab Controller",
+       "scope": "dart",
+        "body": [
+        "    /* Its Take A Child   */ ",
+        "    DefaultTabController(    ",
+        "    length: 3,   ",
+        "    initialIndex: 1,   ",
+        "    animationDuration: Duration(milliseconds: 1000),      ",
+        "    child: Column(      ",
+        "      children: const [      ",
+        "        TabBar(tabs: [      ",
+        "          Tab(      ",
+        "            icon: Icon(Icons.home_filled),      ",
+        "            text: 'tab_1',      ",
+        "            iconMargin: EdgeInsets.all(1),      ",
+        "          ),      ",
+        "          Tab(      ",
+        "            icon: Icon(Icons.phone),      ",
+        "          ),      ",
+        "          Tab(      ",
+        "            icon: Icon(Icons.sms),      ",
+        "          ),      ",
+        "        ]),      ",
+        "        Expanded(      ",
+        "          child: TabBarView(      ",
+        "            children: [      ",
+        "              Center(child: Text('tab1')),      ",
+        "              Center(child: Text('tab2')),      ",
+        "              Center(child: Text('tab3')),      ",
+        "            ],      ",
+        "          ),      ",
+        "        ),      ",
+        "      ],      ",
+        "    ),      ",
+        "  ),      ",
+      
+      ],
+        
+        "description": "Tab Controller"
+    },
+
+
+
+
+
+
+
+
+
+  // 5  
+
+    "Sliver AppBar " : {
+       "prefix": "-sliverappbar",
+       "scope": "dart",
+        "body": [
+        "    /* Place into the body */ ",
+      "   body: CustomScrollView(   ",
+      "   slivers: [  ",
+      "     SliverAppBar.medium(  ",
+      "       leading: Icon(Icons.sort),  ",
+      "       title: Text('title'), ",
+      "       centerTitle: true, ",
+      "       actions: [ ",
+      "         Icon(Icons.search_outlined), ",
+      "         Icon(Icons.send_and_archive_outlined), ",
+      "       ], ",
+      "     ), ",
+      "     SliverToBoxAdapter(  ",
+      "       child: Container( ",
+      "         height: 1100, ",
+      "         color: Color.amber, ",
+      "         child: Center(child: Text('text')),     ",
+      "       ),    ",
+      "     ),    ",
+      "   ],    ",
+      " ),    ",
+      
+      ],
+        
+        "description": "Large Medium AppBar"
+    },
+
+
+
+
+
+
+
+
+
+
+  // 6  
+
+    "Drawer Call button" : {
+       "prefix": "-draweropenbutton",
+       "scope": "dart",
+        "body": [
+     "    /* its Take A Child PLace Any Where */ ",
+     "    Builder(builder: (context) {  ",
+     "       /* plz make sure this is required in sacaffold ",
+     "          bottom commited => */ ",
+     "         // drawer: Drawer(),  ",
+     "         return IconButton( ",
+     "           icon: Icon(Icons.sort_outlined),  ",
+     "           onPressed: (() { ",
+     "             Scaffold.of(context).openDrawer();     ",
+     "           }),    ",
+     "         );    ",
+     "       }),    ",
+      
+      ],
+        
+        "description": "Open Drawer Globely Paste Any Where"
+    },
+
+
+
+
+
+
+
+
+
+
+
+  // 7  
+
+    "get state managements" : {
+       "prefix": "-getstate",
+       "scope": "dart",
+        "body": [
+     "   /* Page 2 _________________ ",
+     "     simple class extends by GetxController its required */ ",
+     "     class ${1:classcname} extends GetxController {       ",
+     "       /* required .obs with var name */       ",
+     "       int number  = 100.obs;       ",
+     "            ",
+     "       callonbtntap() {       ",
+     "         number += 1;       ",
+     "       }       ",
+     "     }       ",
+     "            ",
+     "     /* page 1________________        ",
+     "      its take GetMaterialApp required  */       ",
+     "              ",
+     "       /* create a variables on override */       ",
+     "       /* 1. put here name of class to call state managements by anyvarname */ ",
+     "         final ${1:classcname} anyvarnametocall = Get.put(${1:classcname}());",
+     "       /* 2. find class name and call by varname to see states */",
+     "         ${1:classcname} varname = Get.find<${1:classcname}>();",
+     "     ",
+     "     /* on pressed button call var of put */",
+     "     anyvarnametocall.callonbtntap();",
+     "     /* here to see use obx((){}) required */",
+     "       Obx(() => Text( ",
+     "                 'value added see here ${varname.number.toString()}'",
+     "                )), ",
+     "         ",
+      ],
+        
+        "description": "Get State Managment Example"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 8  
+
+    "getx Form validation" : {
+       "prefix": "-formvalidationgetx",
+       "scope": "dart",
+        "body": [
+   
+     "      /*   ",
+     "      make a controller Or",
+     "      Paste It In Variables______________ ",
+     "      ",
+     "        var emailtextinputcontroller = TextEditingController();  ",
+     "        var phontextinputcontroller = TextEditingController(); ",
+     "        var nametextinputcontroller = TextEditingController(); ",
+     "        var passwordtextinputcontroller = TextEditingController(); ",
+     "        bool hideshow = true; ",
+     "      ",
+     "      */ ",
+     "      ",
+     "      ",
+     "       Column( ",
+     "       children: [  ",
+     "         Center( ",
+     "           child: RichText( ",
+     "             text: TextSpan( ",
+     "                 text: 'Form', ",
+     "                 style: TextStyle(fontSize: 35, color: Colors.cyan),  ",
+     "                 children: [  ",
+     "                   TextSpan( ",
+     "                     text: 'with ', ",
+     "                     style: TextStyle(fontSize: 14, color: Colors.blueGrey),             ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'V',            ",
+     "                     style: TextStyle(fontSize: 28, color: Colors.red),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'a',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 18,            ",
+     "                         color: Color.fromARGB(255, 238, 127, 255)),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'l',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 24,            ",
+     "                         color: Color.fromARGB(255, 93, 12, 97)),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'i',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 19,            ",
+     "                         color: Color.fromARGB(255, 194, 90, 0)),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'Dation',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 30,            ",
+     "                         color: Color.fromARGB(255, 72, 72, 212)),            ",
+     "                   ),            ",
+     "                 ]),            ",
+     "           ),            ",
+     "         ),            ",
+     "         // for space            ",
+     "         Divider(),            ",
+     "         TextFormField(            ",
+     "           controller: emailtextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "                  ",
+     "           decoration: InputDecoration(            ",
+     "               prefixIcon: Icon(Icons.email_outlined),            ",
+     "               suffixIcon: IconButton(            ",
+     "                 onPressed: (() {            ",
+     "                   emailtextinputcontroller.clear();            ",
+     "                 }),            ",
+     "                 icon: Icon(Icons.clear),            ",
+     "               ),            ",
+     "               hintText: 'Enter Email Here',            ",
+     "               disabledBorder: OutlineInputBorder(            ",
+     "                   borderSide: BorderSide(width: 4, color: Colors.blueGrey),            ",
+     "                   borderRadius: BorderRadius.circular(5)),            ",
+     "               border: OutlineInputBorder(            ",
+     "                 borderRadius: BorderRadius.circular(7),            ",
+     "                 borderSide: BorderSide(width: 1),            ",
+     "               ),            ",
+     "               errorBorder: OutlineInputBorder(            ",
+     "                   borderSide: BorderSide(width: 2, color: Colors.red),            ",
+     "                   borderRadius: BorderRadius.circular(13)),            ",
+     "               label: Text('Email')),            ",
+     "           // textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             // if without Getx Then => if(value.isEmpty)            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 5)) {            ",
+     "               return 'min 5 character';            ",
+     "             } else if (!GetUtils.isEmail(value!)) {            ",
+     "               return 'email is't Correct';            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         TextFormField(            ",
+     "           controller: phontextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "           keyboardType: TextInputType.number,            ",
+     "           inputFormatters: [FilteringTextInputFormatter.digitsOnly],            ",
+     "           decoration: InputDecoration(            ",
+     "               prefixIcon: Icon(Icons.phone),            ",
+     "               hintText: 'Enter Phone No',            ",
+     "               label: Text('Phone')),            ",
+     "           textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 5)) {            ",
+     "               return 'required Correct Phone No!';            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         TextFormField(            ",
+     "           controller: nametextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "           decoration: InputDecoration(            ",
+     "               prefixIcon: Icon(Icons.person_outline),            ",
+     "               hintText: 'Enter Name here',            ",
+     "               label: Text('Name')),            ",
+     "           textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 5)) {            ",
+     "               return 'min 5 character';            ",
+     "               // return okinputisvalid = true;            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         TextFormField(            ",
+     "           obscureText: hideshow,            ",
+     "           controller: passwordtextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "           decoration: InputDecoration(            ",
+     "             prefixIcon: Icon(Icons.password_outlined),            ",
+     "             hintText: 'Enter Password here',            ",
+     "             label: Text(            ",
+     "               'Password',            ",
+     "             ),            ",
+     "             suffix: IconButton(            ",
+     "               icon: Icon(hideshow            ",
+     "                   ? Icons.remove_red_eye_rounded            ",
+     "                   : Icons.remove_red_eye_outlined),            ",
+     "               onPressed: () {            ",
+     "                 setState(() {            ",
+     "                   hideshow = !hideshow;            ",
+     "                 });            ",
+     "               },            ",
+     "             ),            ",
+     "           ),            ",
+     "           textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 8)) {            ",
+     "               return 'min 8 character';            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(height: 16),            ",
+     "         Row(            ",
+     "           mainAxisAlignment: MainAxisAlignment.spaceBetween,            ",
+     "           children: [            ",
+     "             TextButton(            ",
+     "                 onPressed: () {},            ",
+     "                 child: Row(            ",
+     "                   children: [            ",
+     "                     Icon(Icons.arrow_back),            ",
+     "                     Text(            ",
+     "                       'signup',            ",
+     "                       style: TextStyle(shadows: [            ",
+     "                         Shadow(            ",
+     "                           color: Colors.grey,            ",
+     "                           offset: Offset(2, 2),            ",
+     "                           blurRadius: 2,            ",
+     "                         )            ",
+     "                       ], fontStyle: FontStyle.italic, fontSize: 28),            ",
+     "                     )            ",
+     "                   ],            ",
+     "                 )),            ",
+     "             ElevatedButton(            ",
+     "                 onPressed: () {            ",
+     "                   print(emailtextinputcontroller);            ",
+     "                   print(phontextinputcontroller);            ",
+     "                   print(nametextinputcontroller);            ",
+     "                   print(passwordtextinputcontroller);            ",
+     "                 },            ",
+     "                 child: Text('Login')),            ",
+     "           ],            ",
+     "         )            ",
+     "       ],            ",
+     "      ),            ",
+      ],
+        
+        "description": "form validation by getx Example"
+    },
+
+
+
+
+
+
+
+
+
+  // 9  
+
+  "future builder" : {
+    "prefix": "-futurebuilder",
+    "scope": "dart",
+     "body": [
+    " /* paste on  override ",
+    " here exmple data list by future */ ",
+    "  Future functionname() async { ",
+    "    var ${1:dynamicname} = [ ",
+    "      'hi', ",
+    "      'hy', ",
+    "      'hello', ",
+    "      'welcome', ",
+    "      'nicetomeetyou', ",
+    "    ]; ",
+    "    return ${1:dynamicname}; ",
+    "  } ",
+    "   ",
+    "  /* its take a child:   */ ",
+    "           FutureBuilder( ",
+    "                  future: functionname(),  ",
+    "                  builder: (context, snapshot) {   ",
+    "                    if (snapshot.hasData) {  ",
+    "                      return Expanded( ",
+    "                        child: PageView.builder( ",
+    "                            scrollDirection: Axis.vertical,  ",
+    "                            itemCount: snapshot.data.length, ",
+    "                            itemBuilder: (context, index) { ",
+    "                              return Center( ",
+    "                                child: Text(snapshot.data[index]),      ",
+    "                              );     ",
+    "                            }),     ",
+    "                      );     ",
+    "                    } else {     ",
+    "                      return Center(     ",
+    "                        child: CircularProgressIndicator(),     ",
+    "                      );     ",
+    "                    }     ",
+    "                  }),     ",
+   ],
+     
+     "description": "future builder with page builder example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+  // 10  
+
+  "PopupMenuButton" : {
+    "prefix": "-popupmenubutton",
+    "scope": "dart",
+     "body": [
+   
+    "  /* its take a child:   */ ",
+ "   PopupMenuButton( ",
+ "   shape: BeveledRectangleBorder( ",
+ "       borderRadius: BorderRadius.circular(10), ",
+ "       side: BorderSide( ",
+ "           color: Color.fromARGB(255, 255, 121, 64), ",
+ "           width: 1,",
+ "           strokeAlign: StrokeAlign.inside)),",
+ "   initialValue: 23,",
+ "   elevation: 40,",
+ "   splashRadius: 22,",
+ "   onCanceled: () {",
+ "     print('canceled');",
+ "   },",
+ "   onSelected: (value) {",
+ "     print(value);",
+ "   },",
+ "   position: PopupMenuPosition.over,",
+ "   itemBuilder: (BuildContext context) {",
+ "     return [",
+ "       PopupMenuItem(",
+ "         onTap: null,",
+ "         value: 1,",
+ "         child: Text('item 1'),",
+ "       ),",
+ "       PopupMenuItem(",
+ "         onTap: () {",
+ "           print('menu item clicked');",
+ "         },",
+ "         value: 2,",
+ "         child: Text('item 2'),",
+ "       ),",
+ "     ];",
+ "   }),  ",
+   ],
+     
+     "description": "popup menu button example"
+ },
+
+
+
+
+
+
+
+  // 11  
+
+  "DropdownButton" : {
+    "prefix": "-dropdownButton",
+    "scope": "dart",
+     "body": [
+   
+    "  /* its take a child:   */ ",
+ "   DropdownButton( ",
+ "   borderRadius: BorderRadius.circular(10),  ",
+ "   hint: Text('choose'), ",
+ "   elevation: 70, ",
+ "   // value: 1, ",
+ "   dropdownColor: Color.fromRGBO(139, 255, 253, 0.49),  ",
+ "   onChanged: (value) { ",
+ "     print('dropdown open have action: $value'); ",
+ "   }, ",
+ "   items: [ ",
+ "     DropdownMenuItem( ",
+ "       child: Text('item 1'), ",
+ "       alignment: AlignmentDirectional(0.4, 0.2), ",
+ "       value: 1, ",
+ "       onTap: () { ",
+ "         print('item 1'); ",
+ "       }, ",
+ "     ), ",
+ "     DropdownMenuItem( ",
+ "       child: Text('item 2'), ",
+ "       value: 2, ",
+ "       onTap: () { ",
+ "         print('item 2 clicked'); ",
+ "       }, ",
+ "     ), ",
+ "   ], ",
+ "  ), ",
+
+   ],
+     
+     "description": "Dropdown Button example"
+ },
+
+
+
+
+
+
+
+  // 12  
+
+  "dragable widget" : {
+    "prefix": "-dragablewidget",
+    "scope": "dart",
+     "body": [
+   
+   "/* make a variable with offset     ",
+   " or paste it on override */ ",
+   " Offset offsetvar = const Offset(90, 60);     ",
+   " /* need child */    ",
+   "    Expanded(    ",
+   "              child: LayoutBuilder(builder: (context, constraints) {  ",
+   "                return Stack( ",
+   "                  children: [ ",
+   "                    Positioned( ",
+   "                      left: offsetvar.dx, ",
+   "                      top: offsetvar.dy, ",
+   "                      child: LongPressDraggable( ",
+   "                        feedback: Container( ",
+   "                          child: Text('show during drags'), ",
+   "                          height: 100, ",
+   "                          color: Colors.indigo, ",
+   "                        ), ",
+   "                        child: Container( ",
+   "                          height: 150, ",
+   "                          /* can show any things like  imgs others etc */",
+   "                          child: Text('show front'), ",
+   "                          color: Colors.indigoAccent, ",
+   "                        ), ",
+   "                        onDragEnd: (details) { ",
+   "                          setState(() { ",
+   "                            double adj = MediaQuery.of(context).size.height -       ",
+   "                                constraints.maxHeight;      ",
+   "                            offsetvar = Offset(      ",
+   "                                details.offset.dx, details.offset.dy - adj);      ",
+   "                          });      ",
+   "                        },      ",
+   "                      ),      ",
+   "                    ),      ",
+   "                  ],      ",
+   "                );      ",
+   "              }),      ",
+   "            ),      ",
+
+   ],
+     
+     "description": "dragable widget example"
+ },
+
+
+
+
+
+
+
+
+
+  // 13  
+
+  "drag drop widget" : {
+    "prefix": "-dragdropwidget",
+    "scope": "dart",
+     "body": [
+   "   /* make a color var  ",
+   "   or paste it on override */ ",
+   "   Color catchcolorvar = Color.fromARGB(255, 255, 143, 180); ",
+   "  /* need child */ ",
+   "        Column( ",
+   "          mainAxisAlignment: MainAxisAlignment.spaceBetween,  ",
+   "          crossAxisAlignment: CrossAxisAlignment.center, ",
+   "          children: [ ",
+   "            Draggable( ",
+   "                data: Colors.pink, ",
+   "                onDraggableCanceled: (velocity, offset) {}, ",
+   "                child: Container( ",
+   "                  color: Colors.blue, ",
+   "                  width: 120, ",
+   "                  height: 150, ",
+   "                  child: Center( ",
+   "                    child: Text('its dragable'), ",
+   "                  ), ",
+   "                ), ",
+   "                feedback: Container( ",
+   "                  color: Colors.yellow, ",
+   "                  height: 50, ",
+   "                  width: 50, ",
+   "                  child: Center( ",
+   "                    child: Text('holded'), ",
+   "                  ), ",
+   "                )), ",
+   "            DragTarget( ",
+   "              onAccept: (Color color) { ",
+   "                catchcolorvar = color; ",
+   "              }, ",
+   "              builder: ( ",
+   "                BuildContext context, ",
+   "                List<dynamic> accepted, ",
+   "                List<dynamic> rejected, ",
+   "              ) { ",
+   "                return Container( ",
+   "                  color: accepted.isEmpty ? catchcolorvar : Colors.green,      ",
+   "                  height: 80,     ",
+   "                  width: 80,     ",
+   "                  child: Text('where drags'),     ",
+   "                );     ",
+   "              },     ",
+   "            ),     ",
+   "          ],     ",
+   "        ),     ",
+   ],
+     
+     "description": "drag drop widget example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 14  
+
+  "ReorderableListView" : {
+    "prefix": "-ReorderableListView",
+    "scope": "dart",
+     "body": [
+  "   /* make a list generater ",
+  "      or paste it on override */ ",
+  "      final List<int> items = List<int>.generate(15, ((int index) => index)); ",
+  "   /* need child */ ",
+  "                 Expanded( ",
+  "                 child: ReorderableListView( ",
+  "                   children: List.generate( ",
+  "                     items.length, ",
+  "                     (index) => ListTile( ",
+  "                       key: Key('$index'), ",
+  "                       leading: Icon(Icons.person),  ",
+  "                       tileColor: ",
+  "                           items[index].isOdd ? Colors.lime : Colors.cyanAccent,     ",
+  "                       title: Text(items is ${items[index]}'),    ",
+  "                       trailing: Icon(Icons.drag_handle),    ",
+  "                     ),    ",
+  "                   ),    ",
+  "                   onReorder: (int oldindex, int newIndex) {    ",
+  "                     setState(() {    ",
+  "                       if (oldindex < newIndex) {    ",
+  "                         newIndex -= 1;    ",
+  "                       }    ",
+  "                       // delete old index loc    ",
+  "                       int itemindex = items.removeAt(oldindex);    ",
+  "                       // set new loc by index    ",
+  "                       items.insert(newIndex, itemindex);    ",
+  "                     });    ",
+  "                   },    ",
+  "                 ),    ",
+  "               ),    ",
+   ],
+     
+     "description": "Reorder Able ListView example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 15  
+
+  "autosearch text" : {
+    "prefix": "-autosearch",
+    "scope": "dart",
+     "body": [
+  "  /* make a list with defin string ",
+  "   or paste it on override method */ ",
+  "   final List<String> ${1:dynamicname} = <String>[  ",
+  "    'apple', ",
+  "    'banana', ",
+  "    'mango', ",
+  "  ]; ",
+  " /* need child */ ",
+  "     Autocomplete( ",
+  "               ",
+  "              optionsBuilder: (TextEditingValue getedval) {  ",
+  "                if (getedval.text == '') { ",
+  "                  return Iterable<String>.empty(); ",
+  "                } ",
+  "                return ${1:dynamicname}.where((String item) { ",
+  "                  return item.contains(getedval.text.toLowerCase());      ",
+  "                });     ",
+  "              },     ",
+  "              onSelected: (String item) {     ",
+  "                print('this item is selected $item');     ",
+  "              },     ",
+  "            ),     ",
+   ],
+     
+     "description": "auto search text ListView example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+  // 16  
+
+  "ErrorWidget text" : {
+    "prefix": "-errorwidget",
+    "scope": "dart",
+     "body": [
+ "   /*  place it above runn app */ ",
+ "   ErrorWidget.builder = (FlutterErrorDetails getdetails) {         ",
+ "     bool vdebug = false;        ",
+ "     assert(() {        ",
+ "       vdebug = true;        ",
+ "       return true;        ",
+ "     }());        ",
+ "         ",
+ "     if (vdebug) {        ",
+ "       return ListTile(        ",
+ "         leading: Icon(Icons.nearby_error),        ",
+ "         title: Text('All Errors Here'),        ",
+ "         subtitle: Text('Error/n ${getdetails.exception}'),        ",
+ "         trailing: Icon(Icons.remove_red_eye_outlined),        ",
+ "       );        ",
+ "     }        ",
+ "     return ElevatedButton(        ",
+ "         onPressed: () {        ",
+ "           vdebug = !vdebug;        ",
+ "         },        ",
+ "         child: Icon(Icons.remove_red_eye));        ",
+ "   };        ",
+   ],
+     
+     "description": "Error Widget example"
+ },
+
+
+
+
+
+
+
+
+
+
+  // 17  
+
+  "form validation" : {
+    "prefix": "-formvalidation",
+    "scope": "dart",
+     "body": [
+ " /*     make a globel key of form key ",
+ "     or paste it on override method  */ ",
+ "     final keyforcheck = GlobalKey<FormState>();    ",
+ "     /* need child */    ",
+ "    Form(    ",
+ "              key: keyforcheck,    ",
+ "              child: Column(    ",
+ "                children: [    ",
+ "                  TextFormField(    ",
+ "                    decoration: InputDecoration(    ",
+ "                      hintText: 'Enter Name',    ",
+ "                      label: Text('Name'),    ",
+ "                    ),    ",
+ "                    validator: (value) {    ",
+ "                      if (value == '') {    ",
+ "                        return 'plz fill Name fields';  ",
+ "                      } ",
+ "                      return null; ",
+ "                    }, ",
+ "                  ), ",
+ "                  SizedBox( ",
+ "                    height: 10, ",
+ "                  ), ",
+ "                  TextFormField( ",
+ "                    decoration: InputDecoration(hintText: 'Enter Adress'),     ",
+ "                    validator: (value) {    ",
+ "                      if (value == '') {    ",
+ "                        return 'plz fill Adress fields';    ",
+ "                      }    ",
+ "                      return null;    ",
+ "                    },    ",
+ "                  ),    ",
+ "                  ElevatedButton(    ",
+ "                      onPressed: () {    ",
+ "                        if (keyforcheck.currentState!.validate()) {}    ",
+ "                      },    ",
+ "                      child: Text('check validate')),    ",
+ "                ],    ",
+ "              ),    ",
+ "            ),    ",
+   ],
+     
+     "description": "form validation with button"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+  // 18  
+
+  "CupertinoContextMenu" : {
+    "prefix": "-CupertinoContextMenu",
+    "scope": "dart",
+     "body": [
+  "   /* need child  */ ",
+  "  CupertinoContextMenu( ",
+  "  child: Icon(Icons.fact_check_sharp), ",
+  "  actions: [ ",
+  "    ElevatedButton( ",
+  "        onPressed: () {}, ",
+  "        child: Icon(Icons.check_circle_outline_rounded)), ",
+  "    ElevatedButton(onPressed: () {}, child: Icon(Icons.cancel)),  ",
+  "  ],  ",
+  "  ), ",
+   ],
+     
+     "description": "Cupertino Menu button"
+ },
+
+
+
+
+
+
+
+
+
+  // 19  
+
+  "dataclass" : {
+    "prefix": "-dataclass",
+    "scope": "dart",
+     "body": [
+
+   "   class ${1:dynamicname} {    ",
+   "     final String name;  ",
+   "     final String desc;  ",
+   "     final String img;  ",
+   "     ",
+   "     ${1:dynamicname}({  ",
+   "       required this.name,  ",
+   "       required this.desc,  ",
+   "       required this.img,  ",
+   "     });  ",
+   "     ",
+   "     static List<${1:dynamicname}> list = [  ",
+   "       ${1:dynamicname}(  ",
+   "         name: 'name1',  ",
+   "         desc: 'desc 1',  ",
+   "         img: 'img1.jpg',  ",
+   "       ),  ",
+   "       ${1:dynamicname}(  ",
+   "         name: 'img2',  ",
+   "         desc: 'desc 2',  ",
+   "         img: 'img2.jpg',  ",
+   "       ),  ",
+   "     ];  ",
+   "   }  ",
+      
+   ],
+     
+     "description": "generate data class Object"
+ },
+
+
+
+
+
+
+
+
+
+
+
+  // 20  
+
+  "materialbody" : {
+    "prefix": "-materialbody",
+    "scope": "dart",
+     "body": [
+
+  "    MaterialApp( ",
+  "    title: '${1:title}', ",
+  "    theme: themeval ",
+  "        ? ThemeData( ",
+  "            brightness: Brightness.dark, ",
+  "            /* choose own color */ ",
+  "            primarySwatch: Colors.orange, ",
+  "            appBarTheme: const AppBarTheme( ",
+  "              color: Colors.orange, ",
+  "            ), ",
+  "          ) ",
+  "        : ThemeData( ",
+  "            brightness: Brightness.light, ",
+  "            /* choose own color */ ",
+  "            primarySwatch: Colors.cyan, ",
+  "          ), ",
+  "    // debugShowMaterialGrid: true, ",
+  "    debugShowCheckedModeBanner: false, ",
+  "    home: Scaffold( ",
+  "      drawer: Drawer(), ",
+  "      appBar: AppBar( ", 
+  "        title: Text('${2:appbartitle}'), ",
+  "        leading: Builder(builder: (context) { ",
+  "          return IconButton( ",
+  "            icon: Icon(Icons.sort), ",
+  "            onPressed: () { ",
+  "              Scaffold.of(context).openDrawer();  ",
+  "            }, ",
+  "          ); ",
+  "        }), ",
+  "        actions: [ ",
+  "          IconButton( ",
+  "              onPressed: () { ",
+  "                setState(() { ",
+  "                  themeval = !themeval; ",
+  "                }); ",
+  "              }, ",
+  "              icon: Icon(themeval ",
+  "                  ? Icons.light_mode_outlined  ",
+  "                  : Icons.dark_mode_outlined)), ",
+  "        ], ",
+  "      ), ",
+  "      body: Container( ",
+  "        ",
+  "      ), ",
+  "    ), ",
+  "  ); ",
+      
+   ],
+     
+     "description": "generate material body"
+ },
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

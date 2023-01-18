@@ -1,0 +1,4861 @@
+
+
+
+{
+
+
+
+
+
+
+
+// 1
+
+
+    "button elevated" : {
+       "prefix": "-button 1 simple",
+       "scope": "dart",
+        "body": [
+                                 
+   " /* its take child */ ",
+"   ElevatedButton(   ",
+"   onPressed: () { ",
+"     print(' Button Clicked'); ",
+"   }, ",
+"   child: Text('click_me'), ",
+"   style: ElevatedButton.styleFrom( ",
+"     padding: EdgeInsets.all(10), ",
+"     fixedSize: Size(100, 40), ",
+"     elevation: 30, ",
+"     shadowColor: Color.fromARGB(255, 6, 0, 55), ",
+"     side: BorderSide( ",
+"         width: 2, ",
+"         style: BorderStyle.solid, ",
+"         strokeAlign: StrokeAlign.inside), ",
+"     shape: StadiumBorder(side: BorderSide.none), ",
+"   ), ",
+" ), ",
+
+      ],
+        
+        "description": "simple elevated button 1"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "button gradient" : {
+       "prefix": "-button 2 gradient",
+       "scope": "dart",
+        "body": [
+                                 
+
+   "       class ButtonImageFb1 extends StatelessWidget { ",
+   "         final String text; ",
+   "         final Function() onPressed; ",
+   "         const ButtonImageFb1({required this.text, required this.onPressed, Key? key}) : super(key: key); ",
+   "        ",
+   "         @override ",
+   "         Widget build(BuildContext context) { ",
+   "           return Container( ",
+   "             width: 200, ",
+   "             child: AspectRatio( ",
+   "               aspectRatio: 208 / 71, ",
+   "               child: Container( ",
+   "                 decoration: BoxDecoration(boxShadow: [ ",
+   "                         BoxShadow( ",
+   "                             offset: Offset(0, 4), ",
+   "                             color: Color(0x4960F9).withOpacity(.3), ",
+   "                             spreadRadius: 4, ",
+   "                             blurRadius: 50) ",
+   "                       ]), ",
+   "                 child: MaterialButton( ",
+   "                   onPressed: onPressed, ",
+   "                   splashColor: Colors.lightBlue, ",
+   "                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)), ",
+   "                   padding: const EdgeInsets.all(0.0), ",
+   "                   child: Ink( ",
+   "                     decoration: BoxDecoration( ",
+   "                       //gradient: ",
+   "                       image: DecorationImage( ",
+   "                         image: NetworkImage('https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/finance_app_2%2FbuttonBackgroundSmall.png? ", "alt=media&token=fa2f9bba-120a-4a94-8bc2-f3adc2b58a73'), ",
+   "                         fit: BoxFit.cover, ",
+   "                       ), ",
+   "                       borderRadius: BorderRadius.circular(36), ",
+   "                     ), ",
+   "                     child: Container( ",
+   "                         constraints: const BoxConstraints( ",
+   "                             minWidth: 88.0, ",
+   "                             minHeight: 36.0), // min sizes for Material buttons ",
+   "                         alignment: Alignment.center, ",
+   "                         child:  Text(text, ",
+   "                           style: TextStyle( ",
+   "                               color: Colors.white, fontWeight: FontWeight.w300)))), ",
+   "                   ), ",
+   "                 ), ",
+   "               ), ",
+   "             ); ",
+   "         } ",
+   "       } ",
+
+      ],
+        
+        "description": "gradient button 2 need network to load image"
+    },
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "button splash" : {
+       "prefix": "-button 3 splash",
+       "scope": "dart",
+        "body": [
+                                
+"          class SplashButton extends StatelessWidget { ",
+"            final String title; ",
+"            final String subText; ",
+"            final Function() onPressed; ",
+"            const SplashButton( ",
+"                {required this.title, ",
+"                required this.onPressed, ",
+"                this.subText = '', ",
+"                Key? key}) ",
+"                : super(key: key); ",
+"           ",
+"            @override ",
+"            Widget build(BuildContext context) { ",
+"              return Material( ",
+"                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)), ",
+"                child: InkWell( ",
+"                  onTap: onPressed, ",
+"                  splashColor: Colors.purpleAccent, ",
+"                  child: Container( ",
+"                    width: MediaQuery.of(context).size.width, ",
+"                    height: 75, ",
+"                    padding: const EdgeInsets.all(25.0), ",
+"                    decoration: BoxDecoration( ",
+"                        color: Colors.transparent, ",
+"                        borderRadius: BorderRadius.circular(5.0)), ",
+"                    child: Row( ",
+"                      mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"                      mainAxisSize: MainAxisSize.min, ",
+"                      children: [ ",
+"                        Text( ",
+"                          title, ",
+"                          style: const TextStyle( ",
+"                              fontSize: 18, ",
+"                              fontWeight: FontWeight.bold, ",
+"                              color: Colors.black), ",
+"                        ), ",
+"                        Text( ",
+"                          subText, ",
+"                          style: const TextStyle( ",
+"                              fontSize: 14, ",
+"                              fontWeight: FontWeight.bold, ",
+"                              color: Colors.black), ",
+"                        ), ",
+"                      ], ",
+"                    ), ",
+"                  ), ",
+"                ), ",
+"              ); ",
+"            } ",
+"          } ",
+          
+
+      ],
+        
+        "description": "splash button 3"
+    },
+
+   
+
+
+
+
+
+    "button animated" : {
+       "prefix": "-button 4 animated",
+       "scope": "dart",
+        "body": [
+                                 
+
+
+"          import 'package:vector_math/vector_math_64.dart' as vector; ",
+"            ",
+"          class LoadingAnimatedButton extends StatefulWidget { ",
+"            final Duration duration; ",
+"            final Widget child; ",
+"            final Function() onTap; ",
+"            final double width; ",
+"            final double height; ",
+"           ",
+"            final Color color; ",
+"            final double borderRadius; ",
+"            final Color borderColor; ",
+"            final double borderWidth; ",
+"           ",
+"            const LoadingAnimatedButton( ",
+"                {Key? key, ",
+"                required this.child, ",
+"                required this.onTap, ",
+"                this.width = 200, ",
+"                this.height = 50, ",
+"                this.color = Colors.indigo, ",
+"                this.borderColor = Colors.white, ",
+"                this.borderRadius = 15.0, ",
+"                this.borderWidth = 3.0, ",
+"                this.duration = const Duration(milliseconds: 1500)}) ",
+"                : super(key: key); ",
+"           ",
+"            @override ",
+"            State<LoadingAnimatedButton> createState() => _LoadingAnimatedButtonState(); ",
+"          } ",
+"           ",
+"          class _LoadingAnimatedButtonState extends State<LoadingAnimatedButton> ",
+"              with SingleTickerProviderStateMixin { ",
+"            late AnimationController _animationController; ",
+"           ",
+"            @override ",
+"            void initState() { ",
+"              super.initState(); ",
+"              _animationController = ",
+"                  AnimationController(vsync: this, duration: widget.duration); ",
+"              _animationController.repeat(); ",
+"            } ",
+"           ",
+"            @override ",
+"            void dispose() { ",
+"              _animationController.dispose(); ",
+"              super.dispose(); ",
+"            } ",
+"           ",
+"            @override ",
+"            Widget build(BuildContext context) { ",
+"              return InkWell( ",
+"                onTap: widget.onTap, ",
+"                borderRadius: BorderRadius.circular( ",
+"                  widget.borderRadius, ",
+"                ), ",
+"                splashColor: widget.color, ",
+"                child: CustomPaint( ",
+"                  painter: LoadingPainter( ",
+"                      animation: _animationController, ",
+"                      borderColor: widget.borderColor, ",
+"                      borderRadius: widget.borderRadius, ",
+"                      borderWidth: widget.borderWidth, ",
+"                      color: widget.color), ",
+"                  child: Container( ",
+"                    width: widget.width, ",
+"                    height: widget.height, ",
+"                    alignment: Alignment.center, ",
+"                    child: Padding( ",
+"                      padding: const EdgeInsets.all(5.5), ",
+"                      child: widget.child, ",
+"                    ), ",
+"                  ), ",
+"                ), ",
+"              ); ",
+"            } ",
+"          } ",
+"           ",
+"          class LoadingPainter extends CustomPainter { ",
+"            final Animation animation; ",
+"            final Color color; ",
+"            final double borderRadius; ",
+"            final Color borderColor; ",
+"            final double borderWidth; ",
+"           ",
+"            LoadingPainter( ",
+"                {required this.animation, ",
+"                this.color = Colors.orange, ",
+"                this.borderColor = Colors.white, ",
+"                this.borderRadius = 15.0, ",
+"                this.borderWidth = 3.0}) ",
+"                : super(repaint: animation); ",
+"           ",
+"            @override ",
+"            void paint(Canvas canvas, Size size) { ",
+"              final rect = Offset.zero & size; ",
+"              final paint = Paint() ",
+"                ..shader = SweepGradient( ",
+"                        colors: [ ",
+"                          color.withOpacity(.25), ",
+"                          color, ",
+"                        ], ",
+"                        startAngle: 0.0, ",
+"                        endAngle: vector.radians(180), ",
+"                        stops: const [.75, 1.0], ",
+"                        transform: ",
+"                            GradientRotation(vector.radians(360.0 * animation.value))) ",
+"                    .createShader(rect); ",
+"           ",
+"              final path = Path.combine( ",
+"                  PathOperation.xor, ",
+"                  Path() ",
+"                    ..addRRect( ",
+"                        RRect.fromRectAndRadius(rect, Radius.circular(borderRadius))), ",
+"                  Path() ",
+"                    ..addRRect(RRect.fromRectAndRadius( ",
+"                        rect.deflate(3.5), Radius.circular(borderRadius)))); ",
+"              canvas.drawRRect( ",
+"                  RRect.fromRectAndRadius( ",
+"                      rect.deflate(1.5), Radius.circular(borderRadius)), ",
+"                  Paint() ",
+"                    ..color = borderColor ",
+"                    ..strokeWidth = borderWidth ",
+"                    ..style = PaintingStyle.stroke); ",
+"              canvas.drawPath(path, paint); ",
+"            } ",
+"           ",
+"            @override ",
+"            bool shouldRepaint(covariant CustomPainter oldDelegate) { ",
+"              return true; ",
+"            } ",
+"          } ",
+"           ",
+"           ",
+"           ",
+      ], 
+
+       "description": "animated button 4 need to import vector math its not from packages" 
+   }, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "button toggle" : {
+       "prefix": "-button 5 toggle",
+       "scope": "dart",
+        "body": [
+                                 
+          
+"          class ToggleAnimatedIconButton extends StatefulWidget { ",
+"            final List<String> toggleItems; ",
+"            final AnimatedIconData? toggleIcon; ",
+"            final Function(bool) onPressed; ",
+"            final Duration animationDuration; ",
+"            final Curve animationCurve; ",
+"           ",
+"            const ToggleAnimatedIconButton( ",
+"                {required this.toggleItems, ",
+"                this.toggleIcon, ",
+"                required this.onPressed, ",
+"                this.animationDuration = const Duration(milliseconds: 350), ",
+"                this.animationCurve = Curves.bounceIn, ",
+"                Key? key}) ",
+"                : assert(toggleItems.length == 2), ",
+"                  super(key: key); ",
+"           ",
+"            @override ",
+"            State<ToggleAnimatedIconButton> createState() => ",
+"                _ToggleAnimatedIconButtonState(); ",
+"          } ",
+"           ",
+"          class _ToggleAnimatedIconButtonState extends State<ToggleAnimatedIconButton> ",
+"              with SingleTickerProviderStateMixin { ",
+"            late Animation<double> _animation; ",
+"            late AnimationController _animationController; ",
+"            bool state = false; ",
+"            @override ",
+"            void initState() { ",
+"              super.initState(); ",
+"              _animationController = ",
+"                  AnimationController(vsync: this, duration: widget.animationDuration); ",
+"          ",
+"              _animation = CurvedAnimation(",
+"                  parent: _animationController, curve: widget.animationCurve); ",
+"            } ",
+"           ",
+"            @override ",
+"            void dispose() { ",
+"              super.dispose(); ",
+"              _animationController.dispose(); ",
+"            } ",
+"           ",
+"            @override ",
+"            Widget build(BuildContext context) { ",
+"              return FloatingActionButton.extended( ",
+"                backgroundColor: Colors.indigo, ",
+"                label: Row( ",
+"                  children: [ ",
+"                    Text(!state ? widget.toggleItems[0] : widget.toggleItems[1]), ",
+"                    widget.toggleIcon != null",
+"                        ? AnimatedIcon(icon: widget.toggleIcon!, progress: _animation) ",
+"                        : Container(), ",
+"                  ], ",
+"                ), ",
+"                onPressed: () { ",
+"                  if (!state) { ",
+"                    _animationController.forward(); ",
+"                  } else { ",
+"                    _animationController.reverse(); ",
+"                  } ",
+"                  widget.onPressed(state); ",
+"                  setState(() { ",
+"                    state = !state; ",
+"                  }); ",
+"                }, ",
+"              ); ",
+"            } ",
+"          } ",
+
+
+      ], 
+
+       "description": "toggle button 5" 
+   }, 
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+  // 2  
+
+    "Bottomnavbar Docked" : {
+       "prefix": "-Bottomnavbardocked",
+       "scope": "dart",
+        "body": [
+        "    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,  ",
+        "    bottomNavigationBar: BottomAppBar( ",
+        "      shape: const CircularNotchedRectangle(), ",
+        "      child: BottomNavigationBar( ",
+        "        selectedItemColor: Colors.pink.shade900, ",
+        "        unselectedItemColor: Colors.amber.shade700, ",
+        "        selectedFontSize: 10, ",
+        "        unselectedFontSize: 7, ",
+        "        currentIndex: 0, ",
+        "        enableFeedback: true, ",
+        "        elevation: 30, ",
+        "        // landscapeLayout: BottomNavigationBarLandscapeLayout.centered, ",
+        "        items: <BottomNavigationBarItem>[ ",
+        "          const BottomNavigationBarItem( ",
+        "              icon: Icon(Icons.home), ",
+        "              activeIcon: Icon(Icons.maps_home_work_rounded), ",
+        "              tooltip: 'home_tooltip', ",
+        "              label: 'Home_Label'), ",
+        "          const BottomNavigationBarItem( ",
+        "              icon: Icon(Icons.video_call), ",
+        "              activeIcon: Icon(Icons.videocam_rounded), ",
+        "              tooltip: 'tooltip', ",
+        "              label: 'Label'), ",
+        "          const BottomNavigationBarItem( ",
+        "              icon: Icon(Icons.add_a_photo), ",
+        "              activeIcon: Icon(Icons.add_a_photo_outlined), ",
+        "              tooltip: 'photo_tooltip', ",
+        "              label: 'photo_Label'), ",
+        "        ], ",
+        "        onTap: ((value) { ",
+        "          print(value); ",
+        "        }), ",
+        "      ), ",
+        "    ), ",
+        "    floatingActionButton: FloatingActionButton( ",
+        "      onPressed: () {}, ",
+        "      hoverColor: Colors.amberAccent, ",
+        "      child: Icon(Icons.local_post_office_rounded), ",
+        "      tooltip: 'why open mail page', ",
+        "      shape: ",
+        "          BeveledRectangleBorder(borderRadius: BorderRadius.circular(20)), ",
+        "    ), ",
+
+      ],
+        
+        "description": "Bottomnavbar FAB Docked"
+    },
+
+
+
+
+    "Bottomnavbar notched" : {
+       "prefix": "-Bottomnavbar Notched",
+       "scope": "dart",
+        "body": [
+      "      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,        ",
+      "      bottomNavigationBar: BottomAppBar(    ",
+      "        notchMargin: 10,    ",
+      "        shape: CircularNotchedRectangle(),    ",
+      "        child: Row(    ",
+      "          mainAxisAlignment: MainAxisAlignment.spaceEvenly,    ",
+      "          crossAxisAlignment: CrossAxisAlignment.end,    ",
+      "          children: [    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.home),    ",
+      "              tooltip: 'home_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.video_call),    ",
+      "              tooltip: 'video_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.add_a_photo),    ",
+      "              tooltip: 'photo_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "            IconButton(    ",
+      "              icon: const Icon(Icons.arrow_forward),    ",
+      "              tooltip: 'arrow_tooltip',    ",
+      "              onPressed: () {},    ",
+      "              hoverColor: Color.fromARGB(26, 5, 252, 232),    ",
+      "              splashColor: Color.fromARGB(255, 158, 180, 190),    ",
+      "              focusColor: Color.fromARGB(255, 61, 11, 65),    ",
+      "              color: Colors.indigoAccent,    ",
+      "            ),    ",
+      "          ],    ",
+      "        ),    ",
+      "      ),    ",
+      "      floatingActionButton: FloatingActionButton(    ",
+      "        mini: true,    ",
+      "        onPressed: () {},    ",
+      "        hoverColor: Colors.amberAccent,    ",
+      "        child: Icon(Icons.local_post_office_rounded),    ",
+      "        tooltip: 'why open mail page',    ",
+      "        shape: RoundedRectangleBorder(    ",
+      "            borderRadius: BorderRadius.all(Radius.circular(50))),    ",
+      "      ),    ",
+
+      ],
+        
+        "description": "Bottomnavbar with FAB Notched"
+    },
+
+
+
+
+
+
+
+    "bottom navbar 3 opaque" : {
+      "prefix": "-bottom navbar 3 opaque",
+      "scope": "dart",
+       "body": [
+
+"        class BottomNavBarTransparentFb1 extends StatefulWidget { ",
+"          const BottomNavBarTransparentFb1({Key? key}) : super(key: key); ",
+"         ",
+"          @override ",
+"          _BottomNavBarTransparentFb1State createState() => _BottomNavBarTransparentFb1State(); ",
+"        } ",
+"         ",
+"        class _BottomNavBarTransparentFb1State extends State<BottomNavBarTransparentFb1> { ",
+"           ",
+"          //- - - - - - - - - instructions - - - - - - - - - - - - - - - - - - ",
+"          // WARNING! MUST ADD extendBody: true; TO CONTAINING SCAFFOLD ",
+"          // ",
+"          // Instructions: ",
+"          // ",
+"          // add this widget to the bottomNavigationBar property of a Scaffold, along with ",
+"          // setting the extendBody parameter to true i.e: ",
+"          // ",
+"          // Scaffold( ",
+"          //  extendBody: true, ",
+"          //  bottomNavigationBar: BottomNavBarTransparentFb1() ",
+"          // ) ",
+"          // ",
+"          // Properties such as color and height can be set by changing the properties at the top of the build method ",
+"          // ",
+"          // For help implementing this in a real app, watch https://www.youtube.com/watch?v=C0_3w0kd0nc. The style is different, but connecting it to navigation is the same.   ",
+"          // ",
+"          //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - ",
+"         ",
+"          @override ",
+"          Widget build(BuildContext context) { ",
+"            Size size = MediaQuery.of(context).size; ",
+"            double height = 56; ",
+"         ",
+"            final primaryColor = Colors.orange; ",
+"            final secondaryColor = Colors.black54; ",
+"            final accentColor = const Color(0xffffffff); ",
+"            final backgroundColor = Colors.black12.withOpacity(.2); ",
+"         ",
+"            return BottomAppBar( ",
+"              color: backgroundColor, ",
+"              elevation: 0, ",
+"              child: Stack( ",
+"                children: [ ",
+"                  Container( ",
+"                    height: height, ",
+"                    child: Row( ",
+"                      mainAxisAlignment: MainAxisAlignment.spaceAround, ",
+"                      children: [ ",
+"                        NavBarIcon( ",
+"                          text: 'Home', ",
+"                          icon: Icons.home_outlined, ",
+"                          selected: true, ",
+"                          onPressed: () {}, ",
+"                          defaultColor: secondaryColor, ",
+"                          selectedColor: primaryColor, ",
+"                        ), ",
+"                        NavBarIcon( ",
+"                          text: 'Search', ",
+"                          icon: Icons.search_outlined, ",
+"                          selected: false, ",
+"                          onPressed: () {}, ",
+"                          defaultColor: secondaryColor, ",
+"                          selectedColor: primaryColor, ",
+"                        ), ",
+"                        NavBarIcon( ",
+"                            text: 'Cart', ",
+"                            icon: Icons.local_grocery_store_outlined, ",
+"                            selected: false, ",
+"                            onPressed: () {}, ",
+"                            defaultColor: secondaryColor, ",
+"                            selectedColor: primaryColor), ",
+"                        NavBarIcon( ",
+"                          text: 'Calendar', ",
+"                          icon: Icons.date_range_outlined, ",
+"                          selected: false, ",
+"                          onPressed: () {}, ",
+"                          selectedColor: primaryColor, ",
+"                          defaultColor: secondaryColor, ",
+"                        ) ",
+"                      ], ",
+"                    ), ",
+"                  ), ",
+"                ], ",
+"              ), ",
+"            ); ",
+"          } ",
+"        } ",
+"        class NavBarIcon extends StatelessWidget { ",
+"          const NavBarIcon( ",
+"              {Key? key, ",
+"              required this.text, ",
+"              required this.icon, ",
+"              required this.selected, ",
+"              required this.onPressed, ",
+"              this.selectedColor = const Color(0xffFF8527), ",
+"              this.defaultColor = Colors.black54}) ",
+"              : super(key: key); ",
+"          final String text; ",
+"          final IconData icon; ",
+"          final bool selected; ",
+"          final Function() onPressed; ",
+"          final Color defaultColor; ",
+"          final Color selectedColor; ",
+"         ",
+"          @override ",
+"          Widget build(BuildContext context) { ",
+"            return Column( ",
+"              mainAxisAlignment: MainAxisAlignment.center, ",
+"              children: [ ",
+"                IconButton( ",
+"                  onPressed: onPressed, ",
+"                  icon: Icon( ",
+"                    icon, ",
+"                    size: 25, ",
+"                    color: selected ? selectedColor : defaultColor, ",
+"                  ), ",
+"                ), ",
+"              ], ",
+"            ); ",
+"          } ",
+"        } ",
+        
+     
+     ],
+       
+       "description": "bottom navbar 3 opaque with transparent"
+   },
+
+   "bottom nav bar transparent" : {
+    "prefix": "-bottom navbar transparent",
+    "scope": "dart",
+     "body": [
+  
+ " // No state included ",
+ " class TransparentBtmNavBarCurvedFb1 extends StatefulWidget { ",
+ "   final Color primaryColor; ",
+ "   final Color secondaryColor; ",
+ "   final Color backgroundColor; ",
+ "  ",
+ "   TransparentBtmNavBarCurvedFb1( ",
+ "       {this.primaryColor = Colors.green, ",
+ "       this.secondaryColor = Colors.white, ",
+ "       Key? key}) ",
+ "       : backgroundColor = Colors.black.withOpacity(.5), ",
+ "         super( ",
+ "           key: key, ",
+ "         ); ",
+ "  ",
+ "   @override ",
+ "   _TransparentBtmNavBarCurvedFb1State createState() => ",
+ "       _TransparentBtmNavBarCurvedFb1State(); ",
+ " } ",
+ "  ",
+ " class _TransparentBtmNavBarCurvedFb1State ",
+ "     extends State<TransparentBtmNavBarCurvedFb1> { ",
+ "   //- - - - - - - - - instructions - - - - - - - - - - - - - - - - - - ",
+ "   // WARNING! MUST ADD extendBody: true; TO CONTAINING SCAFFOLD ",
+ "   // ",
+ "   // Instructions: ",
+ "   // ",
+ "   // add this widget to the bottomNavigationBar property of a Scaffold, along with ",
+ "   // setting the extendBody parameter to true i.e: ",
+ "   // ",
+ "   // Scaffold( ",
+ "   //  extendBody: true, ",
+ "   //  bottomNavigationBar: BottomNavBarCurvedFb1() ",
+ "   // ) ",
+ "   // ",
+ "   // Properties such as color and height can be set by changing the properties at the top of the build method ",
+ "   // ",
+ "   // For help implementing this in a real app, watch https://www.youtube.com/watch?v=C0_3w0kd0nc. The style is different, but connecting it to navigation is the same.   ",
+ "   // ",
+ "   //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - ",
+ "  ",
+ "   @override ",
+ "   Widget build(BuildContext context) { ",
+ "     Size size = MediaQuery.of(context).size; ",
+ "     double height = 56; ",
+ "  ",
+ "     final primaryColor = widget.primaryColor; ",
+ "     final secondaryColor = widget.secondaryColor; ",
+ "     final backgroundColor = widget.backgroundColor; ",
+ "  ",
+ "     return BottomAppBar( ",
+ "       color: Colors.transparent, ",
+ "       elevation: 0, ",
+ "       child: Stack( ",
+ "         children: [ ",
+ "           CustomPaint( ",
+ "             size: Size(size.width, height + 6), ",
+ "             painter: BottomNavCurvePainter(backgroundColor: backgroundColor), ",
+ "           ), ",
+ "           Center( ",
+ "             heightFactor: 0.6, ",
+ "             child: FloatingActionButton( ",
+ "                 backgroundColor: primaryColor, ",
+ "                 child: const Icon(Icons.landscape), ",
+ "                 elevation: 0.1, ",
+ "                 onPressed: () {}), ",
+ "           ), ",
+ "           SizedBox( ",
+ "             height: height, ",
+ "             child: Row( ",
+ "               mainAxisAlignment: MainAxisAlignment.spaceAround, ",
+ "               children: [ ",
+ "                 NavBarIcon( ",
+ "                   text: 'Home', ",
+ "                   icon: Icons.home_outlined, ",
+ "                   selected: true, ",
+ "                   onPressed: () {}, ",
+ "                   defaultColor: secondaryColor, ",
+ "                   selectedColor: primaryColor, ",
+ "                 ), ",
+ "                 NavBarIcon( ",
+ "                   text: 'Search', ",
+ "                   icon: Icons.search_outlined, ",
+ "                   selected: false, ",
+ "                   onPressed: () {}, ",
+ "                   defaultColor: secondaryColor, ",
+ "                   selectedColor: primaryColor, ",
+ "                 ), ",
+ "                 const SizedBox(width: 56), ",
+ "                 NavBarIcon( ",
+ "                     text: 'Add', ",
+ "                     icon: Icons.local_grocery_store_outlined, ",
+ "                     selected: false, ",
+ "                     onPressed: () {}, ",
+ "                     defaultColor: secondaryColor, ",
+ "                     selectedColor: primaryColor), ",
+ "                 NavBarIcon( ",
+ "                   text: 'Calendar', ",
+ "                   icon: Icons.date_range_outlined, ",
+ "                   selected: false, ",
+ "                   onPressed: () {}, ",
+ "                   selectedColor: primaryColor, ",
+ "                   defaultColor: secondaryColor, ",
+ "                 ) ",
+ "               ], ",
+ "             ), ",
+ "           ), ",
+ "         ], ",
+ "       ), ",
+ "     ); ",
+ "   } ",
+ " } ",
+ "  ",
+ " class BottomNavCurvePainter extends CustomPainter { ",
+ "   BottomNavCurvePainter( ",
+ "       {this.backgroundColor = Colors.white, this.insetRadius = 38}); ",
+ "  ",
+ "   Color backgroundColor; ",
+ "   double insetRadius; ",
+ "   @override ",
+ "   void paint(Canvas canvas, Size size) { ",
+ "     Paint paint = Paint() ",
+ "       ..color = backgroundColor ",
+ "       ..style = PaintingStyle.fill; ",
+ "     Path path = Path()..moveTo(0, 12); ",
+ "  ",
+ "     double insetCurveBeginnningX = size.width / 2 - insetRadius; ",
+ "     double insetCurveEndX = size.width / 2 + insetRadius; ",
+ "     double transitionToInsetCurveWidth = size.width * .05; ",
+ "     path.quadraticBezierTo(size.width * 0.20, 0, ",
+ "         insetCurveBeginnningX - transitionToInsetCurveWidth, 0); ",
+ "     path.quadraticBezierTo( ",
+ "         insetCurveBeginnningX, 0, insetCurveBeginnningX, insetRadius / 2); ",
+ "  ",
+ "     path.arcToPoint(Offset(insetCurveEndX, insetRadius / 2), ",
+ "         radius: Radius.circular(10.0), clockwise: false); ",
+ "  ",
+ "     path.quadraticBezierTo( ",
+ "         insetCurveEndX, 0, insetCurveEndX + transitionToInsetCurveWidth, 0); ",
+ "     path.quadraticBezierTo(size.width * 0.80, 0, size.width, 12); ",
+ "     path.lineTo(size.width, size.height + 56); ",
+ "     path.lineTo( ",
+ "         0, ",
+ "         size.height + ",
+ "             56); //+56 here extends the navbar below app bar to include extra space on some screens (iphone 11) ",
+ "     canvas.drawPath(path, paint); ",
+ "   } ",
+ "  ",
+ "   @override ",
+ "   bool shouldRepaint(CustomPainter oldDelegate) { ",
+ "     return false; ",
+ "   } ",
+ " } ",
+ "  ",
+ " class NavBarIcon extends StatelessWidget { ",
+ "   const NavBarIcon( ",
+ "       {Key? key, ",
+ "       required this.text, ",
+ "       required this.icon, ",
+ "       required this.selected, ",
+ "       required this.onPressed, ",
+ "       this.selectedColor = const Color(0xffFF8527), ",
+ "       this.defaultColor = Colors.black54}) ",
+ "       : super(key: key); ",
+ "   final String text; ",
+ "   final IconData icon; ",
+ "   final bool selected; ",
+ "   final Function() onPressed; ",
+ "   final Color defaultColor; ",
+ "   final Color selectedColor; ",
+ "  ",
+ "   @override ",
+ "   Widget build(BuildContext context) { ",
+ "     return Column( ",
+ "       mainAxisAlignment: MainAxisAlignment.center, ",
+ "       children: [ ",
+ "         IconButton( ",
+ "           onPressed: onPressed, ",
+ "           splashColor: Colors.transparent, ",
+ "           highlightColor: Colors.transparent, ",
+ "           icon: Icon( ",
+ "             icon, ",
+ "             size: 25, ",
+ "             color: selected ? selectedColor : defaultColor, ",
+ "           ), ",
+ "         ), ",
+ "       ], ",
+ "     ); ",
+ "   } ",
+ " } ",
+   
+   ],
+     
+     "description": "Transparent Btm NavBar CurvedFb1 "
+ },
+
+
+
+ "bottom navbar 4 leading type" : {
+  "prefix": "-bottom navbar 4 leading type",
+  "scope": "dart",
+   "body": [
+  
+"    class BottomNavBarFb3 extends StatelessWidget { ",
+"      const BottomNavBarFb3({Key? key}) : super(key: key); ",
+"     ",
+"      final primaryColor = const Color(0xff4338CA); ",
+"      final secondaryColor = const Color(0xff6D28D9); ",
+"      final accentColor = const Color(0xffffffff); ",
+"      final backgroundColor = const Color(0xffffffff); ",
+"      final errorColor = const Color(0xffEF4444); ",
+"     ",
+"      @override ",
+"      Widget build(BuildContext context) { ",
+"        return BottomAppBar( ",
+"          color: Colors.white, ",
+"          child: SizedBox( ",
+"            height: 56, ",
+"            width: MediaQuery.of(context).size.width, ",
+"            child: Padding( ",
+"              padding: const EdgeInsets.only(left: 25.0, right: 25.0),   ",
+"              child: Row( ",
+"                mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"                children: [ ",
+"                  IconBottomBar2( ",
+"                      text: 'Home', ",
+"                      icon: Icons.home, ",
+"                      selected: true, ",
+"                      onPressed: () {}), ",
+"                  Spacer(), ",
+"                  IconBottomBar( ",
+"                      text: 'Search', ",
+"                      icon: Icons.search_outlined, ",
+"                      selected: false, ",
+"                      onPressed: () {}), ",
+"                  IconBottomBar( ",
+"                      text: 'Cart', ",
+"                      icon: Icons.local_grocery_store_outlined, ",
+"                      selected: false, ",
+"                      onPressed: () {}), ",
+"                  IconBottomBar( ",
+"                      text: 'Calendar', ",
+"                      icon: Icons.date_range_outlined, ",
+"                      selected: false, ",
+"                      onPressed: () {}) ",
+"                ], ",
+"              ), ",
+"            ), ",
+"          ), ",
+"        ); ",
+"      } ",
+"    } ",
+"     ",
+"    class IconBottomBar extends StatelessWidget { ",
+"      const IconBottomBar( ",
+"          {Key? key, ",
+"          required this.text, ",
+"          required this.icon, ",
+"          required this.selected, ",
+"          required this.onPressed}) ",
+"          : super(key: key); ",
+"      final String text; ",
+"      final IconData icon; ",
+"      final bool selected; ",
+"      final Function() onPressed; ",
+"     ",
+"      final primaryColor = const Color(0xff4338CA); ",
+"     ",
+"      @override ",
+"      Widget build(BuildContext context) { ",
+"        return Column( ",
+"          mainAxisAlignment: MainAxisAlignment.center, ",
+"          children: [ ",
+"            IconButton( ",
+"              onPressed: onPressed, ",
+"              icon: Icon( ",
+"                icon, ",
+"                size: 25, ",
+"                color: selected ? primaryColor : Colors.black54, ",
+"              ), ",
+"            ), ",
+"          ], ",
+"        ); ",
+"      } ",
+"    } ",
+"     ",
+"    class IconBottomBar2 extends StatelessWidget { ",
+"      const IconBottomBar2( ",
+"          {Key? key, ",
+"          required this.text, ",
+"          required this.icon, ",
+"          required this.selected, ",
+"          required this.onPressed}) ",
+"          : super(key: key); ",
+"      final String text; ",
+"      final IconData icon; ",
+"      final bool selected; ",
+"      final Function() onPressed; ",
+"      final primaryColor = const Color(0xff4338CA); ",
+"      @override ",
+"      Widget build(BuildContext context) { ",
+"        return CircleAvatar( ",
+"          backgroundColor: primaryColor, ",
+"          child: IconButton( ",
+"            onPressed: onPressed, ",
+"            icon: Icon( ",
+"              icon, ",
+"              size: 25, ",
+"              color: Colors.white, ",
+"            ), ",
+"          ), ",
+"        ); ",
+"      } ",
+"    } ",
+    
+    
+ ],
+   
+   "description": "bottom navbar 4 leading type"
+},
+
+
+
+
+
+
+
+"bottom navbar 5 raised type" : {
+  "prefix": "-bottom navbar 5 raised type",
+  "scope": "dart",
+   "body": [
+ 
+
+ "    class BottomNavBarRaisedInsetFb1 extends StatefulWidget { ",
+ "      const BottomNavBarRaisedInsetFb1({Key? key}) : super(key: key); ",
+ "     ",
+ "      @override ",
+ "      _BottomNavBarRaisedInsetFb1State createState() => _BottomNavBarRaisedInsetFb1State(); ",
+ "    } ",
+ "     ",
+ "    class _BottomNavBarRaisedInsetFb1State extends State<BottomNavBarRaisedInsetFb1> { ",
+ "       ",
+ "      //- - - - - - - - - instructions - - - - - - - - - - - - - - - - - - ",
+ "      // WARNING! MUST ADD extendBody: true; TO CONTAINING SCAFFOLD ",
+ "      // ",
+ "      // Instructions: ",
+ "      // ",
+ "      // add this widget to the bottomNavigationBar property of a Scaffold, along with ",
+ "      // setting the extendBody parameter to true i.e: ",
+ "      // ",
+ "      // Scaffold( ",
+ "      //  extendBody: true, ",
+ "      //  bottomNavigationBar: BottomNavBarRaisedInsetFb1() ",
+ "      // ) ",
+ "      // ",
+ "      // Properties such as color and height can be set by changing the properties at the top of the build method ",
+ "      // ",
+ "      // For help implementing this in a real app, watch https://www.youtube.com/watch?v=C0_3w0kd0nc. The style is different, but connecting it to navigation is the same.  ",
+ "      // ",
+ "      //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - ",
+ "     ",
+ "      @override ",
+ "      Widget build(BuildContext context) { ",
+ "        Size size = MediaQuery.of(context).size; ",
+ "        double height = 56; ",
+ "     ",
+ "        final primaryColor = Colors.blue; ",
+ "        final secondaryColor = Colors.black54; ",
+ "        final accentColor = const Color(0xffffffff); ",
+ "        final backgroundColor = Colors.white; ",
+ "     ",
+ "        final shadowColor = Colors.grey; //color of Navbar shadow ",
+ "        double elevation = 100; //Elevation of the bottom Navbar ",
+ "     ",
+ "        return BottomAppBar( ",
+ "          color: Colors.transparent, ",
+ "          elevation: 0, ",
+ "          child: Stack( ",
+ "            children: [ ",
+ "              CustomPaint( ",
+ "                size: Size(size.width, height), ",
+ "                painter: BottomNavCurvePainter(backgroundColor: backgroundColor, shadowColor: shadowColor, elevation: elevation), ",
+ "              ), ",
+ "              Center( ",
+ "                heightFactor: 0.6, ",
+ "                child: FloatingActionButton( ",
+ "                    backgroundColor: primaryColor, ",
+ "                    child: Icon(Icons.shopping_basket), ",
+ "                    elevation: 0.1, ",
+ "                    onPressed: () {}), ",
+ "              ), ",
+ "              Container( ",
+ "                height: height, ",
+ "                child: Row( ",
+ "                  mainAxisAlignment: MainAxisAlignment.spaceAround, ",
+ "                  children: [ ",
+ "                    NavBarIcon( ",
+ "                      text: 'Home', ",
+ "                      icon: Icons.home_outlined, ",
+ "                      selected: true, ",
+ "                      onPressed: () {}, ",
+ "                      defaultColor: secondaryColor, ",
+ "                      selectedColor: primaryColor, ",
+ "                    ), ",
+ "                    NavBarIcon( ",
+ "                      text: 'Search', ",
+ "                      icon: Icons.search_outlined, ",
+ "                      selected: false, ",
+ "                      onPressed: () {}, ",
+ "                      defaultColor: secondaryColor, ",
+ "                      selectedColor: primaryColor, ",
+ "                    ), ",
+ "                    SizedBox(width: 56), ",
+ "                    NavBarIcon( ",
+ "                        text: 'Cart', ",
+ "                        icon: Icons.local_grocery_store_outlined, ",
+ "                        selected: false, ",
+ "                        onPressed: () {}, ",
+ "                        defaultColor: secondaryColor, ",
+ "                        selectedColor: primaryColor), ",
+ "                    NavBarIcon( ",
+ "                      text: 'Calendar', ",
+ "                      icon: Icons.date_range_outlined, ",
+ "                      selected: false, ",
+ "                      onPressed: () {}, ",
+ "                      selectedColor: primaryColor, ",
+ "                      defaultColor: secondaryColor, ",
+ "                    ) ",
+ "                  ], ",
+ "                ), ",
+ "              ), ",
+ "            ], ",
+ "          ), ",
+ "        ); ",
+ "      } ",
+ "    } ",
+ "     ",
+ "    class BottomNavCurvePainter extends CustomPainter { ",
+ "      BottomNavCurvePainter({this.backgroundColor = Colors.white, this.insetRadius = 38, this.shadowColor = Colors.grey, this.elevation = 100}); ",
+ "     ",
+ "      Color backgroundColor; ",
+ "      Color shadowColor; ",
+ "      double elevation;  ",
+ "      double insetRadius; ",
+ "      @override ",
+ "      void paint(Canvas canvas, Size size) { ",
+ "     ",
+ "        Paint paint = Paint() ",
+ "          ..color = backgroundColor ",
+ "          ..style = PaintingStyle.fill; ",
+ "        Path path = Path(); ",
+ "     ",
+ "        double insetCurveBeginnningX = size.width / 2 - insetRadius; ",
+ "        double insetCurveEndX = size.width / 2 + insetRadius; ",
+ "        ",
+ "        path.lineTo(insetCurveBeginnningX, 0); ",
+ "        path.arcToPoint(Offset(insetCurveEndX, 0), ",
+ "            radius: Radius.circular(41), clockwise: true); ",
+ "        ",
+ "        path.lineTo(size.width, 0); ",
+ "     ",
+ "        path.lineTo(size.width, size.height + 56); ",
+ "        path.lineTo( ",
+ "            0, ",
+ "            size.height + ",
+ "                56); //+56 here extends the navbar below app bar to include extra space on some screens (iphone 11) ",
+ "        canvas.drawShadow(path, shadowColor, elevation, true); ",
+ "        canvas.drawPath(path, paint); ",
+ "      } ",
+ "     ",
+ "      @override ",
+ "      bool shouldRepaint(CustomPainter oldDelegate) { ",
+ "        return false; ",
+ "      } ",
+ "    } ",
+ "     ",
+ "    class NavBarIcon extends StatelessWidget { ",
+ "      const NavBarIcon( ",
+ "          {Key? key, ",
+ "          required this.text, ",
+ "          required this.icon, ",
+ "          required this.selected, ",
+ "          required this.onPressed, ",
+ "          this.selectedColor = const Color(0xffFF8527), ",
+ "          this.defaultColor = Colors.black54}) ",
+ "          : super(key: key); ",
+ "      final String text; ",
+ "      final IconData icon; ",
+ "      final bool selected; ",
+ "      final Function() onPressed; ",
+ "      final Color defaultColor; ",
+ "      final Color selectedColor; ",
+ "     ",
+ "      @override ",
+ "      Widget build(BuildContext context) { ",
+ "        return Column( ",
+ "          mainAxisAlignment: MainAxisAlignment.center, ",
+ "          children: [ ",
+ "            IconButton( ",
+ "              onPressed: onPressed, ",
+ "              splashColor: Colors.transparent, ",
+ "              highlightColor: Colors.transparent, ",
+ "              icon: Icon( ",
+ "                icon, ",
+ "                size: 25, ",
+ "                color: selected ? selectedColor : defaultColor, ",
+ "              ), ",
+ "            ), ",
+ "          ], ",
+ "        ); ",
+ "      } ",
+ "    } ",
+    
+ 
+ ],
+   
+   "description": "bottom navbar 4 raised type"
+},
+
+
+
+"bottom navbar curved" : {
+  "prefix": "-bottom navbar 5 curved",
+  "scope": "dart",
+   "body": [
+
+
+
+
+ "    class BottomNavBarCurvedFb1 extends StatefulWidget { ",
+ "      const BottomNavBarCurvedFb1({Key? key}) : super(key: key); ",
+ "     ",
+ "      @override ",
+ "      _BottomNavBarCurvedFb1State createState() => _BottomNavBarCurvedFb1State(); ",
+ "    } ",
+ "     ",
+ "    class _BottomNavBarCurvedFb1State extends State<BottomNavBarCurvedFb1> { ",
+ "       ",
+ "      //- - - - - - - - - instructions - - - - - - - - - - - - - - - - - - ",
+ "      // WARNING! MUST ADD extendBody: true; TO CONTAINING SCAFFOLD ",
+ "      // ",
+ "      // Instructions: ",
+ "      // ",
+ "      // add this widget to the bottomNavigationBar property of a Scaffold, along with ",
+ "      // setting the extendBody parameter to true i.e: ",
+ "      // ",
+ "      // Scaffold( ",
+ "      //  extendBody: true, ",
+ "      //  bottomNavigationBar: BottomNavBarCurvedFb1() ",
+ "      // ) ",
+ "      // ",
+ "      // Properties such as color and height can be set by changing the properties at the top of the build method ",
+ "      // ",
+ "      // For help implementing this in a real app, watch https://www.youtube.com/watch?v=C0_3w0kd0nc. The style is different, but connecting it to navigation is the same.   ",
+ "      // ",
+ "      //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - ",
+ "     ",
+ "      @override ",
+ "      Widget build(BuildContext context) { ",
+ "        Size size = MediaQuery.of(context).size; ",
+ "        double height = 56; ",
+ "     ",
+ "        final primaryColor = Colors.orange; ",
+ "        final secondaryColor = Colors.black54; ",
+ "        final accentColor = const Color(0xffffffff); ",
+ "        final backgroundColor = Colors.white; ",
+ "     ",
+ "        return BottomAppBar( ",
+ "          color: Colors.transparent, ",
+ "          elevation: 0, ",
+ "          child: Stack( ",
+ "            children: [ ",
+ "              CustomPaint( ",
+ "                size: Size(size.width, height + 6), ",
+ "                painter: BottomNavCurvePainter(backgroundColor: backgroundColor), ",
+ "              ), ",
+ "              Center( ",
+ "                heightFactor: 0.6, ",
+ "                child: FloatingActionButton( ",
+ "                    backgroundColor: primaryColor, ",
+ "                    child: Icon(Icons.shopping_basket), ",
+ "                    elevation: 0.1, ",
+ "                    onPressed: () {}), ",
+ "              ), ",
+ "              Container( ",
+ "                height: height, ",
+ "                child: Row( ",
+ "                  mainAxisAlignment: MainAxisAlignment.spaceAround, ",
+ "                  children: [ ",
+ "                    NavBarIcon( ",
+ "                      text: 'Home', ",
+ "                      icon: Icons.home_outlined, ",
+ "                      selected: true, ",
+ "                      onPressed: () {}, ",
+ "                      defaultColor: secondaryColor, ",
+ "                      selectedColor: primaryColor, ",
+ "                    ), ",
+ "                    NavBarIcon( ",
+ "                      text: 'Search', ",
+ "                      icon: Icons.search_outlined, ",
+ "                      selected: false, ",
+ "                      onPressed: () {}, ",
+ "                      defaultColor: secondaryColor, ",
+ "                      selectedColor: primaryColor, ",
+ "                    ), ",
+ "                    SizedBox(width: 56), ",
+ "                    NavBarIcon( ",
+ "                        text: 'Cart', ",
+ "                        icon: Icons.local_grocery_store_outlined, ",
+ "                        selected: false, ",
+ "                        onPressed: () {}, ",
+ "                        defaultColor: secondaryColor, ",
+ "                        selectedColor: primaryColor), ",
+ "                    NavBarIcon( ",
+ "                      text: 'Calendar', ",
+ "                      icon: Icons.date_range_outlined, ",
+ "                      selected: false, ",
+ "                      onPressed: () {}, ",
+ "                      selectedColor: primaryColor, ",
+ "                      defaultColor: secondaryColor, ",
+ "                    ) ",
+ "                  ], ",
+ "                ), ",
+ "              ), ",
+ "            ], ",
+ "          ), ",
+ "        ); ",
+ "      } ",
+ "    } ",
+ "     ",
+ "    class BottomNavCurvePainter extends CustomPainter { ",
+ "      BottomNavCurvePainter({this.backgroundColor = Colors.white, this.insetRadius = 38}); ",
+ "     ",
+ "      Color backgroundColor; ",
+ "      double insetRadius; ",
+ "      @override ",
+ "      void paint(Canvas canvas, Size size) { ",
+ "     ",
+ "        Paint paint = Paint() ",
+ "          ..color = backgroundColor ",
+ "          ..style = PaintingStyle.fill; ",
+ "        Path path = Path()..moveTo(0, 12); ",
+ "     ",
+ "        double insetCurveBeginnningX = size.width / 2 - insetRadius; ",
+ "        double insetCurveEndX = size.width / 2 + insetRadius; ",
+ "        double transitionToInsetCurveWidth = size.width * .05; ",
+ "        path.quadraticBezierTo(size.width * 0.20, 0, ",
+ "            insetCurveBeginnningX - transitionToInsetCurveWidth, 0); ",
+ "        path.quadraticBezierTo( ",
+ "            insetCurveBeginnningX, 0, insetCurveBeginnningX, insetRadius / 2); ",
+ "     ",
+ "        path.arcToPoint(Offset(insetCurveEndX, insetRadius / 2), ",
+ "            radius: Radius.circular(10.0), clockwise: false); ",
+ "     ",
+ "        path.quadraticBezierTo( ",
+ "            insetCurveEndX, 0, insetCurveEndX + transitionToInsetCurveWidth, 0); ",
+ "        path.quadraticBezierTo(size.width * 0.80, 0, size.width, 12); ",
+ "        path.lineTo(size.width, size.height + 56); ",
+ "        path.lineTo( ",
+ "            0, ",
+ "            size.height + ",
+ "                56); //+56 here extends the navbar below app bar to include extra space on some screens (iphone 11) ",
+ "        canvas.drawPath(path, paint); ",
+ "      } ",
+ "     ",
+ "      @override ",
+ "      bool shouldRepaint(CustomPainter oldDelegate) { ",
+ "        return false; ",
+ "      } ",
+ "    } ",
+ "     ",
+ "    class NavBarIcon extends StatelessWidget { ",
+ "      const NavBarIcon( ",
+ "          {Key? key, ",
+ "          required this.text, ",
+ "          required this.icon, ",
+ "          required this.selected, ",
+ "          required this.onPressed, ",
+ "          this.selectedColor = const Color(0xffFF8527), ",
+ "          this.defaultColor = Colors.black54}) ",
+ "          : super(key: key); ",
+ "      final String text; ",
+ "      final IconData icon; ",
+ "      final bool selected; ",
+ "      final Function() onPressed; ",
+ "      final Color defaultColor; ",
+ "      final Color selectedColor; ",
+ "     ",
+ "      @override ",
+ "      Widget build(BuildContext context) { ",
+ "        return Column( ",
+ "          mainAxisAlignment: MainAxisAlignment.center, ",
+ "          children: [ ",
+ "            IconButton( ",
+ "              onPressed: onPressed, ",
+ "              splashColor: Colors.transparent, ",
+ "              highlightColor: Colors.transparent, ",
+ "              icon: Icon( ",
+ "                icon, ",
+ "                size: 25, ",
+ "                color: selected ? selectedColor : defaultColor, ",
+ "              ), ",
+ "            ), ",
+ "          ], ",
+ "        ); ",
+ "      } ",
+ "    } ",
+    
+ 
+ ],
+   
+   "description": "bottom navbar 5 curved"
+},
+
+
+
+"bottom navbar 6 simple" : {
+  "prefix": "-bottom navbar 6 simple",
+  "scope": "dart",
+   "body": [
+ 
+ 
+" class BottomNavBarFb5 extends StatelessWidget { ",
+"   const BottomNavBarFb5({Key? key}) : super(key: key); ",
+"  ",
+"   final primaryColor = const Color(0xff4338CA); ",
+"   final secondaryColor = const Color(0xff6D28D9); ",
+"   final accentColor = const Color(0xffffffff); ",
+"   final backgroundColor = const Color(0xffffffff); ",
+"   final errorColor = const Color(0xffEF4444); ",
+"  ",
+"   @override ",
+"   Widget build(BuildContext context) { ",
+"     return Container( ",
+"       decoration: const BoxDecoration( ",
+"         gradient: ",
+"             LinearGradient(colors: [Color(0xff4338CA), Color(0xff6D28D9)]),  ",
+"       ), ",
+"       child: BottomAppBar( ",
+"         elevation: 0, ",
+"         color: Colors.transparent, ",
+"         child: SizedBox( ",
+"           height: 56, ",
+"           width: MediaQuery.of(context).size.width, ",
+"           child: Padding( ",
+"             padding: const EdgeInsets.only(left: 25.0, right: 25.0), ",
+"             child: Row( ",
+"               mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"               crossAxisAlignment: CrossAxisAlignment.start, ",
+"               children: [ ",
+"                 IconBottomBar( ",
+"                     text: 'Home', ",
+"                     icon: Icons.home, ",
+"                     selected: true, ",
+"                     onPressed: () {}), ",
+"                 IconBottomBar( ",
+"                     text: 'Search', ",
+"                     icon: Icons.search_outlined, ",
+"                     selected: false, ",
+"                     onPressed: () {}), ",
+"                 IconBottomBar( ",
+"                     text: 'Add', ",
+"                     icon: Icons.add_to_photos_outlined, ",
+"                     selected: false, ",
+"                     onPressed: () {}), ",
+"                 IconBottomBar( ",
+"                     text: 'Cart', ",
+"                     icon: Icons.local_grocery_store_outlined, ",
+"                     selected: false, ",
+"                     onPressed: () {}), ",
+"                 IconBottomBar( ",
+"                     text: 'Calendar', ",
+"                     icon: Icons.date_range_outlined, ",
+"                     selected: false, ",
+"                     onPressed: () {}) ",
+"               ], ",
+"             ), ",
+"           ), ",
+"         ), ",
+"       ), ",
+"     ); ",
+"   } ",
+" } ",
+"  ",
+" class IconBottomBar extends StatelessWidget { ",
+"   const IconBottomBar( ",
+"       {Key? key, ",
+"       required this.text, ",
+"       required this.icon, ",
+"       required this.selected, ",
+"       required this.onPressed}) ",
+"       : super(key: key); ",
+"   final String text; ",
+"   final IconData icon; ",
+"   final bool selected; ",
+"   final Function() onPressed; ",
+"  ",
+"   final primaryColor = const Color(0xff4338CA); ",
+"   final accentColor = const Color(0xffffffff); ",
+"  ",
+"   @override ",
+"   Widget build(BuildContext context) { ",
+"     return Column( ",
+"       mainAxisAlignment: MainAxisAlignment.center, ",
+"       children: [ ",
+"         IconButton( ",
+"           onPressed: onPressed, ",
+"           icon: ",
+"               Icon(icon, size: 25, color: selected ? accentColor : Colors.grey),  ",
+"         ), ",
+"         Text( ",
+"           text, ",
+"           style: TextStyle( ",
+"               fontSize: 12, ",
+"               height: .1, ",
+"               color: selected ? accentColor : Colors.grey), ",
+"         ) ",
+"       ], ",
+"     ); ",
+"   } ",
+" } ",
+
+ ],
+   
+   "description": "bottom navbar 6 simple"
+},
+
+
+
+
+
+
+
+
+
+  // 3 
+
+    "Tab Controller" : {
+       "prefix": "-Tab Controller",
+       "scope": "dart",
+        "body": [
+        "    /* Its Take A Child   */ ",
+        "    DefaultTabController(    ",
+        "    length: 3,   ",
+        "    initialIndex: 1,   ",
+        "    animationDuration: Duration(milliseconds: 1000),      ",
+        "    child: Column(      ",
+        "      children: const [      ",
+        "        TabBar(tabs: [      ",
+        "          Tab(      ",
+        "            icon: Icon(Icons.home_filled),      ",
+        "            text: 'tab_1',      ",
+        "            iconMargin: EdgeInsets.all(1),      ",
+        "          ),      ",
+        "          Tab(      ",
+        "            icon: Icon(Icons.phone),      ",
+        "          ),      ",
+        "          Tab(      ",
+        "            icon: Icon(Icons.sms),      ",
+        "          ),      ",
+        "        ]),      ",
+        "        Expanded(      ",
+        "          child: TabBarView(      ",
+        "            children: [      ",
+        "              Center(child: Text('tab1')),      ",
+        "              Center(child: Text('tab2')),      ",
+        "              Center(child: Text('tab3')),      ",
+        "            ],      ",
+        "          ),      ",
+        "        ),      ",
+        "      ],      ",
+        "    ),      ",
+        "  ),      ",
+      
+      ],
+        
+        "description": "Tab Controller"
+    },
+
+
+    "Tab Controller 2 cupertino" : {
+      "prefix": "-Tab Controller 2 cupertino",
+      "scope": "dart",
+       "body": [
+
+       "    /* Its Take A Child   */ ",
+"       Column( ",
+"      children: [  ",
+"        /* Or Wrap With CupertinoSlidingSegmentedControl if need or uncomment bottom type 2*/  ",
+"        CupertinoSegmentedControl( ",
+"            children: { ",
+"              'flutter_Val': const Text(' flutter '), ",
+"              'Php_Val': const Text(' Php '), ",
+"              'Python_Val': Container( ",
+"                color: _getValue == 'Python Val' ",
+"                    ? const Color.fromARGB(255, 233, 245, 61).withOpacity(0.8) ",
+"                    : Colors.white.withOpacity(0), ",
+"                width: double.infinity, ",
+"                child: const Text(' Python '), ",
+"              ), ",
+"            }, ",
+"            onValueChanged: (String value) { ",
+"              setState(() { ",
+"                /* make a var OR Paste on Override method:  var _getValue; */ ",
+"                _getValue = value; ",
+"              }); ",
+"            }), ",
+"        _getValue != null ",
+"            ? Text('$_getValue is Choose') ",
+"            : const Text('Nothing Choose'), ",
+"      ], ",
+"    ); ",
+" ",
+"   ",
+"    /* type 2 */ ",
+"     /* ",
+" CupertinoSlidingSegmentedControl( ",
+"            children: const { ",
+"              1: Text(' flutter '), ",
+"              2: Text(' Php '), ",
+"              3: Text(' Python '), ",
+"            }, ",
+"            groupValue: _getint, ",
+"            onValueChanged: (value) { ",
+"              setState(() { ",
+"                /* make a var OR Paste on Override method:  var _getint; */ ",
+"                _getint = value; ",
+"              }); ",
+"            }), ",
+"        _getint != null ",
+"            ? Text('$_getint is Choose') ",
+"            : const Text('Nothing Choose'), ",
+"     */ ",
+     
+     ],
+       
+       "description": "Tab Controller 2 cupertino"
+   },
+
+
+
+
+
+
+
+  // 4  
+
+    "Sliver AppBar " : {
+       "prefix": "-sliverappbar",
+       "scope": "dart",
+        "body": [
+        "    /* Place into the body */ ",
+      "   body: CustomScrollView(   ",
+      "   slivers: [  ",
+      "     SliverAppBar.medium(  ",
+      "       leading: Icon(Icons.sort),  ",
+      "       title: Text('title'), ",
+      "       centerTitle: true, ",
+      "       actions: [ ",
+      "         Icon(Icons.search_outlined), ",
+      "         Icon(Icons.send_and_archive_outlined), ",
+      "       ], ",
+      "     ), ",
+      "     SliverToBoxAdapter(  ",
+      "       child: Container( ",
+      "         height: 1100, ",
+      "         color: Color.amber, ",
+      "         child: Center(child: Text('text')),     ",
+      "       ),    ",
+      "     ),    ",
+      "   ],    ",
+      " ),    ",
+      
+      ],
+        
+        "description": "Large Medium AppBar"
+    },
+
+
+
+
+
+
+
+
+
+
+  // 5  
+
+    "Drawer Call button" : {
+       "prefix": "-drawer call globaly",
+       "scope": "dart",
+        "body": [
+     "    /* its Take A Child PLace Any Where */ ",
+     "    Builder(builder: (context) {  ",
+     "       /* plz make sure this is required in sacaffold ",
+     "          bottom commited => */ ",
+     "         // drawer: Drawer(),  ",
+     "         return IconButton( ",
+     "           icon: Icon(Icons.sort_outlined),  ",
+     "           onPressed: (() { ",
+     "             Scaffold.of(context).openDrawer();     ",
+     "           }),    ",
+     "         );    ",
+     "       }),    ",
+      
+      ],
+        
+        "description": "Open Drawer Globely Paste Any Where"
+    },
+
+
+
+
+
+
+
+
+
+
+
+  // 6  
+
+    "get state managements" : {
+       "prefix": "-getstate",
+       "scope": "dart",
+        "body": [
+     "   /* Page 2 _________________ ",
+     "     simple class extends by GetxController its required */ ",
+     "     class ${1:classcname} extends GetxController {       ",
+     "       /* required .obs with var name */       ",
+     "       int number  = 100.obs;       ",
+     "            ",
+     "       callonbtntap() {       ",
+     "         number += 1;       ",
+     "       }       ",
+     "     }       ",
+     "            ",
+     "     /* page 1________________        ",
+     "      its take GetMaterialApp required  */       ",
+     "              ",
+     "       /* create a variables on override */       ",
+     "       /* 1. put here name of class to call state managements by anyvarname */ ",
+     "         final ${1:classcname} anyvarnametocall = Get.put(${1:classcname}());",
+     "       /* 2. find class name and call by varname to see states */",
+     "         ${1:classcname} varname = Get.find<${1:classcname}>();",
+     "     ",
+     "     /* on pressed button call var of put */",
+     "     anyvarnametocall.callonbtntap();",
+     "     /* here to see use obx((){}) required */",
+     "       Obx(() => Text( ",
+     "                 'value added see here ${varname.number.toString()}'",
+     "                )), ",
+     "         ",
+      ],
+        
+        "description": "Get State Managment Example"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 7  
+
+    "getx Form validation" : {
+       "prefix": "-formvalidationgetx",
+       "scope": "dart",
+        "body": [
+   
+     "      /*   ",
+     "      make a controller Or",
+     "      Paste It In Variables______________ ",
+     "      ",
+     "        var emailtextinputcontroller = TextEditingController();  ",
+     "        var phontextinputcontroller = TextEditingController(); ",
+     "        var nametextinputcontroller = TextEditingController(); ",
+     "        var passwordtextinputcontroller = TextEditingController(); ",
+     "        bool hideshow = true; ",
+     "      ",
+     "      */ ",
+     "      ",
+     "      ",
+     "       Column( ",
+     "       children: [  ",
+     "         Center( ",
+     "           child: RichText( ",
+     "             text: TextSpan( ",
+     "                 text: 'Form', ",
+     "                 style: TextStyle(fontSize: 35, color: Colors.cyan),  ",
+     "                 children: [  ",
+     "                   TextSpan( ",
+     "                     text: 'with ', ",
+     "                     style: TextStyle(fontSize: 14, color: Colors.blueGrey),             ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'V',            ",
+     "                     style: TextStyle(fontSize: 28, color: Colors.red),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'a',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 18,            ",
+     "                         color: Color.fromARGB(255, 238, 127, 255)),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'l',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 24,            ",
+     "                         color: Color.fromARGB(255, 93, 12, 97)),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'i',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 19,            ",
+     "                         color: Color.fromARGB(255, 194, 90, 0)),            ",
+     "                   ),            ",
+     "                   TextSpan(            ",
+     "                     text: 'Dation',            ",
+     "                     style: TextStyle(            ",
+     "                         fontSize: 30,            ",
+     "                         color: Color.fromARGB(255, 72, 72, 212)),            ",
+     "                   ),            ",
+     "                 ]),            ",
+     "           ),            ",
+     "         ),            ",
+     "         // for space            ",
+     "         Divider(),            ",
+     "         TextFormField(            ",
+     "           controller: emailtextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "                  ",
+     "           decoration: InputDecoration(            ",
+     "               prefixIcon: Icon(Icons.email_outlined),            ",
+     "               suffixIcon: IconButton(            ",
+     "                 onPressed: (() {            ",
+     "                   emailtextinputcontroller.clear();            ",
+     "                 }),            ",
+     "                 icon: Icon(Icons.clear),            ",
+     "               ),            ",
+     "               hintText: 'Enter Email Here',            ",
+     "               disabledBorder: OutlineInputBorder(            ",
+     "                   borderSide: BorderSide(width: 4, color: Colors.blueGrey),            ",
+     "                   borderRadius: BorderRadius.circular(5)),            ",
+     "               border: OutlineInputBorder(            ",
+     "                 borderRadius: BorderRadius.circular(7),            ",
+     "                 borderSide: BorderSide(width: 1),            ",
+     "               ),            ",
+     "               errorBorder: OutlineInputBorder(            ",
+     "                   borderSide: BorderSide(width: 2, color: Colors.red),            ",
+     "                   borderRadius: BorderRadius.circular(13)),            ",
+     "               label: Text('Email')),            ",
+     "           // textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             // if without Getx Then => if(value.isEmpty)            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 5)) {            ",
+     "               return 'min 5 character';            ",
+     "             } else if (!GetUtils.isEmail(value!)) {            ",
+     "               return 'email is't Correct';            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         TextFormField(            ",
+     "           controller: phontextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "           keyboardType: TextInputType.number,            ",
+     "           inputFormatters: [FilteringTextInputFormatter.digitsOnly],            ",
+     "           decoration: InputDecoration(            ",
+     "               prefixIcon: Icon(Icons.phone),            ",
+     "               hintText: 'Enter Phone No',            ",
+     "               label: Text('Phone')),            ",
+     "           textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 5)) {            ",
+     "               return 'required Correct Phone No!';            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         TextFormField(            ",
+     "           controller: nametextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "           decoration: InputDecoration(            ",
+     "               prefixIcon: Icon(Icons.person_outline),            ",
+     "               hintText: 'Enter Name here',            ",
+     "               label: Text('Name')),            ",
+     "           textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 5)) {            ",
+     "               return 'min 5 character';            ",
+     "               // return okinputisvalid = true;            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(            ",
+     "           height: 4,            ",
+     "         ),            ",
+     "         TextFormField(            ",
+     "           obscureText: hideshow,            ",
+     "           controller: passwordtextinputcontroller,            ",
+     "           autovalidateMode: AutovalidateMode.onUserInteraction,            ",
+     "           decoration: InputDecoration(            ",
+     "             prefixIcon: Icon(Icons.password_outlined),            ",
+     "             hintText: 'Enter Password here',            ",
+     "             label: Text(            ",
+     "               'Password',            ",
+     "             ),            ",
+     "             suffix: IconButton(            ",
+     "               icon: Icon(hideshow            ",
+     "                   ? Icons.remove_red_eye_rounded            ",
+     "                   : Icons.remove_red_eye_outlined),            ",
+     "               onPressed: () {            ",
+     "                 setState(() {            ",
+     "                   hideshow = !hideshow;            ",
+     "                 });            ",
+     "               },            ",
+     "             ),            ",
+     "           ),            ",
+     "           textAlign: TextAlign.center,            ",
+     "           validator: (value) {            ",
+     "             if (!GetUtils.isLengthGreaterThan(value, 8)) {            ",
+     "               return 'min 8 character';            ",
+     "             } else {            ",
+     "               return null;            ",
+     "             }            ",
+     "           },            ",
+     "         ),            ",
+     "         SizedBox(height: 16),            ",
+     "         Row(            ",
+     "           mainAxisAlignment: MainAxisAlignment.spaceBetween,            ",
+     "           children: [            ",
+     "             TextButton(            ",
+     "                 onPressed: () {},            ",
+     "                 child: Row(            ",
+     "                   children: [            ",
+     "                     Icon(Icons.arrow_back),            ",
+     "                     Text(            ",
+     "                       'signup',            ",
+     "                       style: TextStyle(shadows: [            ",
+     "                         Shadow(            ",
+     "                           color: Colors.grey,            ",
+     "                           offset: Offset(2, 2),            ",
+     "                           blurRadius: 2,            ",
+     "                         )            ",
+     "                       ], fontStyle: FontStyle.italic, fontSize: 28),            ",
+     "                     )            ",
+     "                   ],            ",
+     "                 )),            ",
+     "             ElevatedButton(            ",
+     "                 onPressed: () {            ",
+     "                   print(emailtextinputcontroller);            ",
+     "                   print(phontextinputcontroller);            ",
+     "                   print(nametextinputcontroller);            ",
+     "                   print(passwordtextinputcontroller);            ",
+     "                 },            ",
+     "                 child: Text('Login')),            ",
+     "           ],            ",
+     "         )            ",
+     "       ],            ",
+     "      ),            ",
+      ],
+        
+        "description": "form validation by getx Example"
+    },
+
+
+
+
+
+
+
+
+
+  // 8  
+
+  "future builder" : {
+    "prefix": "-futurebuilder",
+    "scope": "dart",
+     "body": [
+    " /* paste on  override ",
+    " here exmple data list by future */ ",
+    "  Future functionname() async { ",
+    "    var ${1:dynamicname} = [ ",
+    "      'hi', ",
+    "      'hy', ",
+    "      'hello', ",
+    "      'welcome', ",
+    "      'nicetomeetyou', ",
+    "    ]; ",
+    "    return ${1:dynamicname}; ",
+    "  } ",
+    "   ",
+    "  /* its take a child:   */ ",
+    "           FutureBuilder( ",
+    "                  future: functionname(),  ",
+    "                  builder: (context, snapshot) {   ",
+    "                    if (snapshot.hasData) {  ",
+    "                      return Expanded( ",
+    "                        child: PageView.builder( ",
+    "                            scrollDirection: Axis.vertical,  ",
+    "                            itemCount: snapshot.data.length, ",
+    "                            itemBuilder: (context, index) { ",
+    "                              return Center( ",
+    "                                child: Text(snapshot.data[index]),      ",
+    "                              );     ",
+    "                            }),     ",
+    "                      );     ",
+    "                    } else {     ",
+    "                      return Center(     ",
+    "                        child: CircularProgressIndicator(),     ",
+    "                      );     ",
+    "                    }     ",
+    "                  }),     ",
+   ],
+     
+     "description": "future builder with page builder example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+  // 9  
+
+  "PopupMenuButton" : {
+    "prefix": "-popupmenubutton",
+    "scope": "dart",
+     "body": [
+   
+    "  /* its take a child:   */ ",
+ "   PopupMenuButton( ",
+ "   shape: BeveledRectangleBorder( ",
+ "       borderRadius: BorderRadius.circular(10), ",
+ "       side: BorderSide( ",
+ "           color: Color.fromARGB(255, 255, 121, 64), ",
+ "           width: 1,",
+ "           strokeAlign: StrokeAlign.inside)),",
+ "   initialValue: 23,",
+ "   elevation: 40,",
+ "   splashRadius: 22,",
+ "   onCanceled: () {",
+ "     print('canceled');",
+ "   },",
+ "   onSelected: (value) {",
+ "     print(value);",
+ "   },",
+ "   position: PopupMenuPosition.over,",
+ "   itemBuilder: (BuildContext context) {",
+ "     return [",
+ "       PopupMenuItem(",
+ "         onTap: null,",
+ "         value: 1,",
+ "         child: Text('item 1'),",
+ "       ),",
+ "       PopupMenuItem(",
+ "         onTap: () {",
+ "           print('menu item clicked');",
+ "         },",
+ "         value: 2,",
+ "         child: Text('item 2'),",
+ "       ),",
+ "     ];",
+ "   }),  ",
+   ],
+     
+     "description": "popup menu button example"
+ },
+
+
+
+
+
+
+
+  // 10  
+
+  "DropdownButton" : {
+    "prefix": "-dropdownButton",
+    "scope": "dart",
+     "body": [
+   
+    "  /* its take a child:   */ ",
+ "   DropdownButton( ",
+ "   borderRadius: BorderRadius.circular(10),  ",
+ "   hint: Text('choose'), ",
+ "   elevation: 70, ",
+ "   // value: 1, ",
+ "   dropdownColor: Color.fromRGBO(139, 255, 253, 0.49),  ",
+ "   onChanged: (value) { ",
+ "     print('dropdown open have action: $value'); ",
+ "   }, ",
+ "   items: [ ",
+ "     DropdownMenuItem( ",
+ "       child: Text('item 1'), ",
+ "       alignment: AlignmentDirectional(0.4, 0.2), ",
+ "       value: 1, ",
+ "       onTap: () { ",
+ "         print('item 1'); ",
+ "       }, ",
+ "     ), ",
+ "     DropdownMenuItem( ",
+ "       child: Text('item 2'), ",
+ "       value: 2, ",
+ "       onTap: () { ",
+ "         print('item 2 clicked'); ",
+ "       }, ",
+ "     ), ",
+ "   ], ",
+ "  ), ",
+
+   ],
+     
+     "description": "Dropdown Button example"
+ },
+
+
+
+
+
+
+
+  // 11  
+
+  "dragable widget" : {
+    "prefix": "-dragablewidget",
+    "scope": "dart",
+     "body": [
+   
+   "/* make a variable with offset     ",
+   " or paste it on override */ ",
+   " Offset offsetvar = const Offset(90, 60);     ",
+   " /* need child */    ",
+   "    Expanded(    ",
+   "              child: LayoutBuilder(builder: (context, constraints) {  ",
+   "                return Stack( ",
+   "                  children: [ ",
+   "                    Positioned( ",
+   "                      left: offsetvar.dx, ",
+   "                      top: offsetvar.dy, ",
+   "                      child: LongPressDraggable( ",
+   "                        feedback: Container( ",
+   "                          child: Text('show during drags'), ",
+   "                          height: 100, ",
+   "                          color: Colors.indigo, ",
+   "                        ), ",
+   "                        child: Container( ",
+   "                          height: 150, ",
+   "                          /* can show any things like  imgs others etc */",
+   "                          child: Text('show front'), ",
+   "                          color: Colors.indigoAccent, ",
+   "                        ), ",
+   "                        onDragEnd: (details) { ",
+   "                          setState(() { ",
+   "                            double adj = MediaQuery.of(context).size.height -       ",
+   "                                constraints.maxHeight;      ",
+   "                            offsetvar = Offset(      ",
+   "                                details.offset.dx, details.offset.dy - adj);      ",
+   "                          });      ",
+   "                        },      ",
+   "                      ),      ",
+   "                    ),      ",
+   "                  ],      ",
+   "                );      ",
+   "              }),      ",
+   "            ),      ",
+
+   ],
+     
+     "description": "dragable widget example"
+ },
+
+
+
+
+
+
+
+
+
+  // 12  
+
+  "drag drop widget" : {
+    "prefix": "-dragdropwidget",
+    "scope": "dart",
+     "body": [
+   "   /* make a color var  ",
+   "   or paste it on override */ ",
+   "   Color catchcolorvar = Color.fromARGB(255, 255, 143, 180); ",
+   "  /* need child */ ",
+   "        Column( ",
+   "          mainAxisAlignment: MainAxisAlignment.spaceBetween,  ",
+   "          crossAxisAlignment: CrossAxisAlignment.center, ",
+   "          children: [ ",
+   "            Draggable( ",
+   "                data: Colors.pink, ",
+   "                onDraggableCanceled: (velocity, offset) {}, ",
+   "                child: Container( ",
+   "                  color: Colors.blue, ",
+   "                  width: 120, ",
+   "                  height: 150, ",
+   "                  child: Center( ",
+   "                    child: Text('its dragable'), ",
+   "                  ), ",
+   "                ), ",
+   "                feedback: Container( ",
+   "                  color: Colors.yellow, ",
+   "                  height: 50, ",
+   "                  width: 50, ",
+   "                  child: Center( ",
+   "                    child: Text('holded'), ",
+   "                  ), ",
+   "                )), ",
+   "            DragTarget( ",
+   "              onAccept: (Color color) { ",
+   "                catchcolorvar = color; ",
+   "              }, ",
+   "              builder: ( ",
+   "                BuildContext context, ",
+   "                List<dynamic> accepted, ",
+   "                List<dynamic> rejected, ",
+   "              ) { ",
+   "                return Container( ",
+   "                  color: accepted.isEmpty ? catchcolorvar : Colors.green,      ",
+   "                  height: 80,     ",
+   "                  width: 80,     ",
+   "                  child: Text('where drags'),     ",
+   "                );     ",
+   "              },     ",
+   "            ),     ",
+   "          ],     ",
+   "        ),     ",
+   ],
+     
+     "description": "drag drop widget example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 13  
+
+  "ReorderableListView" : {
+    "prefix": "-ReorderableListView",
+    "scope": "dart",
+     "body": [
+  "   /* make a list generater ",
+  "      or paste it on override */ ",
+  "      final List<int> items = List<int>.generate(15, ((int index) => index)); ",
+  "   /* need child */ ",
+  "                 Expanded( ",
+  "                 child: ReorderableListView( ",
+  "                   children: List.generate( ",
+  "                     items.length, ",
+  "                     (index) => ListTile( ",
+  "                       key: Key('$index'), ",
+  "                       leading: Icon(Icons.person),  ",
+  "                       tileColor: ",
+  "                           items[index].isOdd ? Colors.lime : Colors.cyanAccent,     ",
+  "                       title: Text(items is ${items[index]}'),    ",
+  "                       trailing: Icon(Icons.drag_handle),    ",
+  "                     ),    ",
+  "                   ),    ",
+  "                   onReorder: (int oldindex, int newIndex) {    ",
+  "                     setState(() {    ",
+  "                       if (oldindex < newIndex) {    ",
+  "                         newIndex -= 1;    ",
+  "                       }    ",
+  "                       // delete old index loc    ",
+  "                       int itemindex = items.removeAt(oldindex);    ",
+  "                       // set new loc by index    ",
+  "                       items.insert(newIndex, itemindex);    ",
+  "                     });    ",
+  "                   },    ",
+  "                 ),    ",
+  "               ),    ",
+   ],
+     
+     "description": "Reorder Able ListView example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 14  
+
+  "autosearch text" : {
+    "prefix": "-autosearch",
+    "scope": "dart",
+     "body": [
+  "  /* make a list with defin string ",
+  "   or paste it on override method */ ",
+  "   final List<String> ${1:dynamicname} = <String>[  ",
+  "    'apple', ",
+  "    'banana', ",
+  "    'mango', ",
+  "  ]; ",
+  " /* need child */ ",
+  "     Autocomplete( ",
+  "               ",
+  "              optionsBuilder: (TextEditingValue getedval) {  ",
+  "                if (getedval.text == '') { ",
+  "                  return Iterable<String>.empty(); ",
+  "                } ",
+  "                return ${1:dynamicname}.where((String item) { ",
+  "                  return item.contains(getedval.text.toLowerCase());      ",
+  "                });     ",
+  "              },     ",
+  "              onSelected: (String item) {     ",
+  "                print('this item is selected $item');     ",
+  "              },     ",
+  "            ),     ",
+   ],
+     
+     "description": "auto search text ListView example"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+  // 15  
+
+  "ErrorWidget text" : {
+    "prefix": "-errorwidget",
+    "scope": "dart",
+     "body": [
+ "   /*  place it above runn app */ ",
+ "   ErrorWidget.builder = (FlutterErrorDetails getdetails) {         ",
+ "     bool vdebug = false;        ",
+ "     assert(() {        ",
+ "       vdebug = true;        ",
+ "       return true;        ",
+ "     }());        ",
+ "         ",
+ "     if (vdebug) {        ",
+ "       return ListTile(        ",
+ "         leading: Icon(Icons.nearby_error),        ",
+ "         title: Text('All Errors Here'),        ",
+ "         subtitle: Text('Error/n ${getdetails.exception}'),        ",
+ "         trailing: Icon(Icons.remove_red_eye_outlined),        ",
+ "       );        ",
+ "     }        ",
+ "     return ElevatedButton(        ",
+ "         onPressed: () {        ",
+ "           vdebug = !vdebug;        ",
+ "         },        ",
+ "         child: Icon(Icons.remove_red_eye));        ",
+ "   };        ",
+   ],
+     
+     "description": "Error Widget example"
+ },
+
+
+
+
+
+
+
+
+
+
+  // 16  
+
+  "form validation" : {
+    "prefix": "-formvalidation",
+    "scope": "dart",
+     "body": [
+ " /*     make a globel key of form key ",
+ "     or paste it on override method  */ ",
+ "     final keyforcheck = GlobalKey<FormState>();    ",
+ "     /* need child */    ",
+ "    Form(    ",
+ "              key: keyforcheck,    ",
+ "              child: Column(    ",
+ "                children: [    ",
+ "                  TextFormField(    ",
+ "                    decoration: InputDecoration(    ",
+ "                      hintText: 'Enter Name',    ",
+ "                      label: Text('Name'),    ",
+ "                    ),    ",
+ "                    validator: (value) {    ",
+ "                      if (value == '') {    ",
+ "                        return 'plz fill Name fields';  ",
+ "                      } ",
+ "                      return null; ",
+ "                    }, ",
+ "                  ), ",
+ "                  SizedBox( ",
+ "                    height: 10, ",
+ "                  ), ",
+ "                  TextFormField( ",
+ "                    decoration: InputDecoration(hintText: 'Enter Adress'),     ",
+ "                    validator: (value) {    ",
+ "                      if (value == '') {    ",
+ "                        return 'plz fill Adress fields';    ",
+ "                      }    ",
+ "                      return null;    ",
+ "                    },    ",
+ "                  ),    ",
+ "                  ElevatedButton(    ",
+ "                      onPressed: () {    ",
+ "                        if (keyforcheck.currentState!.validate()) {}    ",
+ "                      },    ",
+ "                      child: Text('check validate')),    ",
+ "                ],    ",
+ "              ),    ",
+ "            ),    ",
+   ],
+     
+     "description": "form validation with button"
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+  // 17  
+
+  "CupertinoContextMenu" : {
+    "prefix": "-CupertinoContextMenu",
+    "scope": "dart",
+     "body": [
+  "   /* need child  */ ",
+  "  CupertinoContextMenu( ",
+  "  child: Icon(Icons.fact_check_sharp), ",
+  "  actions: [ ",
+  "    ElevatedButton( ",
+  "        onPressed: () {}, ",
+  "        child: Icon(Icons.check_circle_outline_rounded)), ",
+  "    ElevatedButton(onPressed: () {}, child: Icon(Icons.cancel)),  ",
+  "  ],  ",
+  "  ), ",
+   ],
+     
+     "description": "Cupertino Menu button"
+ },
+
+
+
+
+
+
+
+
+
+  // 18  
+
+  "dataclass" : {
+    "prefix": "-dataclass",
+    "scope": "dart",
+     "body": [
+
+   "   class ${1:dynamicname} {    ",
+   "     final String name;  ",
+   "     final String desc;  ",
+   "     final String img;  ",
+   "     ",
+   "     ${1:dynamicname}({  ",
+   "       required this.name,  ",
+   "       required this.desc,  ",
+   "       required this.img,  ",
+   "     });  ",
+   "     ",
+   "     static List<${1:dynamicname}> list = [  ",
+   "       ${1:dynamicname}(  ",
+   "         name: 'name1',  ",
+   "         desc: 'desc 1',  ",
+   "         img: 'img1.jpg',  ",
+   "       ),  ",
+   "       ${1:dynamicname}(  ",
+   "         name: 'img2',  ",
+   "         desc: 'desc 2',  ",
+   "         img: 'img2.jpg',  ",
+   "       ),  ",
+   "     ];  ",
+   "   }  ",
+      
+   ],
+     
+     "description": "generate data class Object"
+ },
+
+
+
+
+
+
+
+
+
+
+
+  // 19  
+
+  "materialbody" : {
+    "prefix": "-materialappbody",
+    "scope": "dart",
+     "body": [
+
+  "    MaterialApp( ",
+  "    title: '${1:title}', ",
+  "    theme: themeval ",
+  "        ? ThemeData( ",
+  "            brightness: Brightness.dark, ",
+  "            /* choose own color */ ",
+  "            primarySwatch: Colors.orange, ",
+  "            appBarTheme: const AppBarTheme( ",
+  "              color: Colors.orange, ",
+  "            ), ",
+  "          ) ",
+  "        : ThemeData( ",
+  "            brightness: Brightness.light, ",
+  "            /* choose own color */ ",
+  "            primarySwatch: Colors.cyan, ",
+  "          ), ",
+  "    // debugShowMaterialGrid: true, ",
+  "    debugShowCheckedModeBanner: false, ",
+  "    home: Scaffold( ",
+  "      drawer: Drawer(), ",
+  "      appBar: AppBar( ", 
+  "        title: Text('${2:appbartitle}'), ",
+  "        leading: Builder(builder: (context) { ",
+  "          return IconButton( ",
+  "            icon: Icon(Icons.sort), ",
+  "            onPressed: () { ",
+  "              Scaffold.of(context).openDrawer();  ",
+  "            }, ",
+  "          ); ",
+  "        }), ",
+  "        actions: [ ",
+  "          IconButton( ",
+  "              onPressed: () { ",
+  "                setState(() { ",
+  "                  themeval = !themeval; ",
+  "                }); ",
+  "              }, ",
+  "              icon: Icon(themeval ",
+  "                  ? Icons.light_mode_outlined  ",
+  "                  : Icons.dark_mode_outlined)), ",
+  "        ], ",
+  "      ), ",
+  "      body: Container( ",
+  "        ",
+  "      ), ",
+  "    ), ",
+  "  ); ",
+      
+   ],
+     
+     "description": "generate material body"
+ },
+
+
+
+
+
+
+
+
+
+
+
+  // 20. all cards  
+
+  "feature cards" : {
+    "prefix": "-card 1 features",
+    "scope": "dart",
+     "body": [
+
+
+ "     class SocialPictureGroup extends StatelessWidget { ",
+ "       const SocialPictureGroup({ ",
+ "         Key? key, ",
+ "         required this.imgUrl, ",
+ "         required this.title, ",
+ "         required this.color, ",
+ "         required this.onTap, ",
+ "         this.width = 400, ",
+ "       }) : super(key: key); ",
+ "        ",
+ "       final String imgUrl; ",
+ "       final String title; ",
+ "       final Color color; ",
+ "       final Function onTap; ",
+ "       final double width; ",
+ "       @override ",
+ "       Widget build(BuildContext context) { ",
+ "         return Column( ",
+ "             crossAxisAlignment: CrossAxisAlignment.start, ",
+ "             children: [ ",
+ "               InkWell( ",
+ "                 onTap: () { ",
+ "                   onTap(); ",
+ "                 }, ",
+ "                 child: Column( ",
+ "                   crossAxisAlignment: CrossAxisAlignment.start, ",
+ "                   children: [ ",
+ "                     Container( ",
+ "                       width: width, ",
+ "                       child: Image.network( ",
+ "                         imgUrl, ",
+ "                         fit: BoxFit.fitWidth, ",
+ "                       ), ",
+ "                       decoration: BoxDecoration( ",
+ "                         borderRadius: BorderRadius.all(Radius.circular(22)), ",
+ "                         // color: Colors.red ",
+ "                       ), ",
+ "                       clipBehavior: Clip.antiAlias, ",
+ "                     ), ",
+ "                     SizedBox( ",
+ "                       height: 10, ",
+ "                     ), ",
+ "                     Text( ",
+ "                       title, ",
+ "                       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold), ",
+ "                     ), ",
+ "                   ], ",
+ "                 ), ",
+ "               ), ",
+ "               SizedBox( ",
+ "                 height: 10, ",
+ "               ), ",
+ "               Container( width: width, child: LikeListTile(title: 'Andre Hirata', likes: '130', subtitle: '103 Reviews', color: color,))  ",
+ "             ], ",
+ "         ); ",
+ "       } ",
+ "     } ",
+ "      ",
+ "     class LikeListTile extends StatelessWidget { ",
+ "       const LikeListTile( ",
+ "           {Key? key, ",
+ "           required this.title, ",
+ "           required this.likes, ",
+ "           required this.subtitle, ",
+ "           this.color = Colors.grey}) ",
+ "           : super(key: key); ",
+ "       final String title; ",
+ "       final String likes; ",
+ "       final String subtitle; ",
+ "       final Color color; ",
+ "       @override ",
+ "       Widget build(BuildContext context) { ",
+ "         return ListTile( ",
+ "           contentPadding: EdgeInsets.all(0), ",
+ "           leading: Container( ",
+ "             width: 50, ",
+ "             child: AspectRatio( ",
+ "               aspectRatio: 1, ",
+ "               child: Container( ",
+ "                 decoration: BoxDecoration( ",
+ "                     shape: BoxShape.circle, ",
+ "                     image: DecorationImage( ",
+ "                         image: NetworkImage( ",
+ "                             'https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg'))), ",
+ "               ), ",
+ "             ), ",
+ "           ), ",
+ "           title: Text(title), ",
+ "           subtitle: Row( ",
+ "             children: [ ",
+ "               Icon(Icons.favorite, color: Colors.orange,size:15), ",
+ "               SizedBox(width: 2), ",
+ "               Text(likes), ",
+ "               Container( ",
+ "                   decoration: BoxDecoration( ",
+ "                     shape: BoxShape.circle, ",
+ "                     color: Colors.grey, ",
+ "                   ), ",
+ "                   child: Padding( ",
+ "                     padding: const EdgeInsets.symmetric(horizontal: 10), ",
+ "                     child: SizedBox(width: 4, height: 4), ",
+ "                   )), ",
+ "               Text(subtitle) ",
+ "             ], ",
+ "           ), ",
+ "           trailing: LikeButton(onPressed: () {}, color: Colors.orange), ",
+ "         ); ",
+ "       } ",
+ "     } ",
+ "      ",
+ "     class LikeButton extends StatefulWidget { ",
+ "       const LikeButton( ",
+ "           {Key? key, required this.onPressed, this.color = Colors.black12}) ",
+ "           : super(key: key); ",
+ "       final Function onPressed; ",
+ "       final Color color; ",
+ "       @override ",
+ "       _LikeButtonState createState() => _LikeButtonState(); ",
+ "     } ",
+ "      ",
+ "     class _LikeButtonState extends State<LikeButton> { ",
+ "       bool isLiked = false; ",
+ "      ",
+ "       @override ",
+ "       Widget build(BuildContext context) { ",
+ "         return Container( ",
+ "             child: IconButton( ",
+ "           icon: Icon(isLiked ? Icons.favorite : Icons.favorite_border, ",
+ "               color: widget.color), ",
+ "           onPressed: () { ",
+ "             setState(() { ",
+ "               isLiked = !isLiked; ",
+ "             }); ",
+ "             widget.onPressed(); ",
+ "           }, ",
+ "         )); ",
+ "       } ",
+ "     } ",
+      
+   ],
+     
+     "description": "feature card"
+ },
+
+
+
+
+  "square cards" : {
+    "prefix": "-card 2 square",
+    "scope": "dart",
+     "body": [
+
+
+ "     class CardFb1 extends StatelessWidget { ",
+ "       final String text; ",
+ "       final String imageUrl; ",
+ "       final String subtitle; ",
+ "       final Function() onPressed; ",
+ "      ",
+ "       const CardFb1({required this.text, required this.imageUrl, required this.subtitle, required this.onPressed, Key? key})  ",
+ "           : super(key: key); ",
+ "      ",
+ "       @override ",
+ "       Widget build(BuildContext context) { ",
+ "         return GestureDetector( ",
+ "             onTap: onPressed, ",
+ "             child: Container( ",
+ "               width: 150, ",
+ "               height: 150, ",
+ "               padding: const EdgeInsets.all(15.0), ",
+ "               decoration: BoxDecoration( ",
+ "                 color: Colors.white, ",
+ "                 borderRadius: BorderRadius.circular(12.5), ",
+ "                 boxShadow: [ ",
+ "                   BoxShadow( ",
+ "                       offset: const Offset(10, 20), ",
+ "                       blurRadius: 10, ",
+ "                       spreadRadius: 0, ",
+ "                       color: Colors.grey.withOpacity(.05)), ",
+ "                 ], ",
+ "               ), ",
+ "               child: Column( ",
+ "                 children: [ ",
+ "                   Image.network(imageUrl, height: 59, fit: BoxFit.cover), ",
+ "                   const Spacer(), ",
+ "                   Text(text, ",
+ "                       textAlign: TextAlign.center, ",
+ "                       style: const TextStyle( ",
+ "                         color: Colors.black, ",
+ "                         fontWeight: FontWeight.bold, ",
+ "                         fontSize: 18, ",
+ "                       )), ",
+ "                   const SizedBox( ",
+ "                     height: 5, ",
+ "                   ), ",
+ "                   Text( ",
+ "                     subtitle, ",
+ "                     textAlign: TextAlign.center, ",
+ "                     style: const TextStyle( ",
+ "                         color: Colors.grey, ",
+ "                         fontWeight: FontWeight.normal, ",
+ "                         fontSize: 12), ",
+ "                   ), ",
+ "                   const SizedBox( ",
+ "                     height: 10, ",
+ "                   ), ",
+ "                 ], ",
+ "               ), ",
+ "             ), ",
+ "         ); ",
+ "       } ",
+ "     } ",
+      
+   ],
+     
+     "description": "square card"
+ },
+
+
+
+
+
+
+        "informative cards" : {
+          "prefix": "-card 3 informative",
+          "scope": "dart",
+          "body": [
+
+
+      "     class InfoCard extends StatelessWidget {",
+      "       final String title;",
+      "       final String body;",
+      "       final Function() onMoreTap;",
+      "     ",
+      "       final String subInfoTitle;",
+      "       final String subInfoText;",
+      "       final Widget subIcon;",
+      "     ",
+      "       const InfoCard(",
+      "           {required this.title,",
+      "           this.body =",
+      "               '''Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudi conseqr!''', ",
+      "           required this.onMoreTap, ",
+      "           this.subIcon = const CircleAvatar( ",
+      "             child: Icon( ",
+      "               Icons.directions, ",
+      "               color: Colors.white, ",
+      "             ), ",
+      "             backgroundColor: Colors.orange, ",
+      "             radius: 25, ",
+      "           ), ",
+      "           this.subInfoText = '545 miles', ",
+      "           this.subInfoTitle = 'Directions', ",
+      "           Key? key}) ",
+      "           : super(key: key); ",
+      "      ",
+      "       @override ",
+      "       Widget build(BuildContext context) { ",
+      "         return Container( ",
+      "           padding: EdgeInsets.all(25.0), ",
+      "           decoration: BoxDecoration( ",
+      "               borderRadius: BorderRadius.circular(25.0), ",
+      "               boxShadow: [ ",
+      "                 BoxShadow( ",
+      "                   color: Colors.black.withOpacity(.05), ",
+      "                   offset: Offset(0, 10), ",
+      "                   blurRadius: 0, ",
+      "                   spreadRadius: 0, ",
+      "                 ) ",
+      "               ], ",
+      "               gradient: RadialGradient( ",
+      "                 colors: [Colors.orangeAccent, Colors.orange], ",
+      "                 focal: Alignment.topCenter, ",
+      "                 radius: .85, ",
+      "               )), ",
+      "           child: Column( ",
+      "             crossAxisAlignment: CrossAxisAlignment.start, ",
+      "             mainAxisSize: MainAxisSize.min, ",
+      "             children: [ ",
+      "               Row( ",
+      "                 mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+      "                 children: [ ",
+      "                   Text( ",
+      "                     title, ",
+      "                     style: TextStyle( ",
+      "                         color: Colors.white, ",
+      "                         fontSize: 26, ",
+      "                         fontWeight: FontWeight.bold), ",
+      "                   ), ",
+      "                   Container( ",
+      "                     width: 75, ",
+      "                     height: 30, ",
+      "                     decoration: BoxDecoration( ",
+      "                       borderRadius: BorderRadius.circular(100.0), ",
+      "                       gradient: LinearGradient( ",
+      "                           colors: [Colors.white, Colors.white], ",
+      "                           begin: Alignment.topCenter, ",
+      "                           end: Alignment.bottomCenter), ",
+      "                     ), ",
+      "                     child: GestureDetector( ",
+      "                       onTap: onMoreTap, ",
+      "                       child: Center( ",
+      "                           child: Text( ",
+      "                         'More', ",
+      "                         style: TextStyle(color: Colors.orange), ",
+      "                       )), ",
+      "                     ), ",
+      "                   ), ",
+      "                 ], ",
+      "               ), ",
+      "               SizedBox(height: 10), ",
+      "               Text( ",
+      "                 body, ",
+      "                 style: ",
+      "                     TextStyle(color: Colors.white.withOpacity(.75), fontSize: 14), ",
+      "               ), ",
+      "               SizedBox(height: 15), ",
+      "               Container( ",
+      "                 width: double.infinity, ",
+      "                 height: 75, ",
+      "                 decoration: BoxDecoration( ",
+      "                   borderRadius: BorderRadius.circular(25.0), ",
+      "                   color: Colors.white, ",
+      "                 ), ",
+      "                 child: Padding( ",
+      "                   padding: const EdgeInsets.all(8.0), ",
+      "                   child: Row( ",
+      "                     children: [ ",
+      "                       subIcon, ",
+      "                       SizedBox(width: 10), ",
+      "                       Column( ",
+      "                         mainAxisAlignment: MainAxisAlignment.center, ",
+      "                         crossAxisAlignment: CrossAxisAlignment.start, ",
+      "                         children: [ ",
+      "                           Text(subInfoTitle), ",
+      "                           Text( ",
+      "                             subInfoText, ",
+      "                             style: TextStyle( ",
+      "                               color: Colors.orange, ",
+      "                               fontSize: 22, ",
+      "                               fontWeight: FontWeight.bold, ",
+      "                             ), ",
+      "                           ), ",
+      "                         ], ",
+      "                       ) ",
+      "                     ], ",
+      "                   ), ",
+      "                 ), ",
+      "               ) ",
+      "             ], ",
+      "           ), ",
+      "         ); ",
+      "       } ",
+      "     } ",
+            
+            
+        ],
+          
+          "description": "informative card"
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+      "nft cards" : {
+        "prefix": "-card 4 nft",
+        "scope": "dart",
+        "body": [
+
+
+
+" class AuctionItem { ",
+"   final String name; ",
+"   final String username; ",
+"   final String description; ",
+"   final String imgUrl; ",
+"  ",
+"   final String time; ",
+"   final String price; ",
+"  ",
+"   AuctionItem( ",
+"       {required this.name, ",
+"       required this.username, ",
+"       required this.description, ",
+"       required this.imgUrl, ",
+"       required this.time, ",
+"       required this.price}); ",
+" } ",
+"  ",
+" List<AuctionItem> auctionItems = [ ",
+"   AuctionItem( ",
+"       name: 'Purple splash', ",
+"       description: ",
+"           'This paint was made via the luxurious lorem ipsum celebration. If you are reading this you are amazing.', ",
+"       username: '@flutterbricks', ",
+"       imgUrl: ",
+"           'https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80', ",
+"       time: '20h: 35m: 08s', ",
+"       price: '15.97 ETH'), ",
+"   AuctionItem( ",
+"       name: 'Neon Glass', ",
+"       description: ",
+"           'This paint was made via the luxurious lorem ipsum celebration. If you are reading this you are amazing.', ",
+"       username: '@henry', ",
+"       imgUrl: ",
+"           'https://images.unsplash.com/photo-1544365558-35aa4afcf11f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80',  ",
+"       time: '20h: 35m: 08s', ",
+"       price: '15.97 ETH'), ",
+" ]; ",
+"  ",
+" // Give a sized box as its parent with width/height. ",
+" class CustomCarouselFB2 extends StatefulWidget { ",
+"   const CustomCarouselFB2({Key? key}) : super(key: key); ",
+"  ",
+"   @override ",
+"   _CustomCarouselFB2State createState() => _CustomCarouselFB2State(); ",
+" } ",
+"  ",
+" class _CustomCarouselFB2State extends State<CustomCarouselFB2> { ",
+"   final double carouselItemMargin = 16; ",
+"  ",
+"   late PageController _pageController; ",
+"  ",
+"   @override ",
+"   void initState() { ",
+"     super.initState(); ",
+"     _pageController = PageController(initialPage: 0, viewportFraction: 1); ",
+"   } ",
+"  ",
+"   @override ",
+"   Widget build(BuildContext context) { ",
+"     return PageView.builder( ",
+"         controller: _pageController, ",
+"         itemCount: auctionItems.length, ",
+"         onPageChanged: (int position) {}, ",
+"         itemBuilder: (BuildContext context, int position) { ",
+"           return imageSlider(position); ",
+"         }); ",
+"   } ",
+"  ",
+"   Widget imageSlider(int position) { ",
+"     return AnimatedBuilder( ",
+"       animation: _pageController, ",
+"       builder: (BuildContext context, widget) { ",
+"         return Container( ",
+"           margin: EdgeInsets.all(carouselItemMargin), ",
+"           child: Center(child: widget), ",
+"         ); ",
+"       }, ",
+"       child: CardFb1(item: auctionItems[position]), ",
+"     ); ",
+"   } ",
+" } ",
+"  ",
+" class CardFb1 extends StatelessWidget { ",
+"   final AuctionItem item; ",
+"  ",
+"   const CardFb1({required this.item, Key? key}) : super(key: key); ",
+"  ",
+"   @override ",
+"   Widget build(BuildContext context) { ",
+"     return GestureDetector( ",
+"       onTap: () { ",
+"         // Import the NFT Hero for animations ",
+"         // Navigator.push( ",
+"         //     context, MaterialPageRoute(builder: (_) => NftHero(item: item))); ",
+"       }, ",
+"       child: Container( ",
+"         width: MediaQuery.of(context).size.width / 1, ",
+"         padding: const EdgeInsets.all(20.0), ",
+"         decoration: BoxDecoration( ",
+"           borderRadius: BorderRadius.circular(5.0), ",
+"           border: Border.all(color: Colors.grey), ",
+"           boxShadow: [ ",
+"             BoxShadow( ",
+"                 offset: const Offset(10, 20), ",
+"                 blurRadius: 10, ",
+"                 spreadRadius: 0, ",
+"                 color: Colors.grey.withOpacity(.05)), ",
+"           ], ",
+"         ), ",
+"         child: Column( ",
+"           children: [ ",
+"             Row( ",
+"               mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"               children: [ ",
+"                 Text( ",
+"                   item.name, ",
+"                   style: const TextStyle(color: Colors.white), ",
+"                 ), ",
+"                 Text( ",
+"                   item.username, ",
+"                   style: const TextStyle(color: Colors.grey), ",
+"                 ) ",
+"               ], ",
+"             ), ",
+"             const SizedBox( ",
+"               height: 10.0, ",
+"             ), ",
+"             Hero( ",
+"               tag: item.imgUrl, ",
+"               child: Image.network( ",
+"                 item.imgUrl, ",
+"                 fit: BoxFit.cover, ",
+"                 height: MediaQuery.of(context).size.height / 3.75, ",
+"               ), ",
+"             ), ",
+"             const SizedBox( ",
+"               height: 25.0, ",
+"             ), ",
+"             Row( ",
+"               mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"               children: [ ",
+"                 Text( ",
+"                   item.time, ",
+"                   style: const TextStyle( ",
+"                       color: Colors.white, ",
+"                       fontSize: 16, ",
+"                       fontWeight: FontWeight.bold), ",
+"                 ), ",
+"                 Text( ",
+"                   item.price, ",
+"                   style: const TextStyle( ",
+"                       color: Colors.white, ",
+"                       fontSize: 16, ",
+"                       fontWeight: FontWeight.bold), ",
+"                 ) ",
+"               ], ",
+"             ), ",
+"             Row( ",
+"               mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"               children: const [ ",
+"                 Text( ",
+"                   'Remaining Time', ",
+"                   style: TextStyle( ",
+"                       color: Colors.grey, ",
+"                       fontSize: 14, ",
+"                       fontWeight: FontWeight.w300), ",
+"                 ), ",
+"                 Text( ",
+"                   'Highest Bid', ",
+"                   style: TextStyle( ",
+"                       color: Colors.grey, ",
+"                       fontSize: 14, ",
+"                       fontWeight: FontWeight.w300), ",
+"                 ) ",
+"               ], ",
+"             ), ",
+"           ], ",
+"         ), ",
+"       ), ",
+"     ); ",
+"   } ",
+" } ",
+          
+          
+      ],
+        
+        "description": "nft card"
+    },
+
+
+      
+
+
+    "card swip cards" : {
+      "prefix": "-card swip cards",
+      "scope": "dart",
+      "body": [
+
+       
+
+ " //- - - - - - - - - Instructions - - - - - - - - - - - - - - - - - - ",
+ "  //  ",
+ "  // Pass cards to be swiped into the cards parameter. Any Widget can be provided,  ",
+ "  // although unexpected behavior may occur with widgets that are especially small or large  ",
+ "  // ",
+ "  // MUST IMPORT MATH for Pi: import 'dart:math'; ",
+ "  // ",
+ "  // Coming Soon:  ",
+ "  //    - Controller Class for controlling swipecard outside of widget. ",
+ "  //    - Buttons that swipe left or right ",
+ " ",
+ "  //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - ",
+ " ",
+ " ",
+ "// -=-=- (Dating App images) -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ",
+ " ",
+ "//COPY Paste below code to test functionality with demo images ",
+ " ",
+ "const List<String> urls = [ ",
+ "  'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHwwfHw%3D&w=1000&q=80', ",
+ "  'https://images.unsplash.com/photo-1561442748-c50715dc32f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw5MjU4MjM3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60', ",
+ "  'https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',   ",
+ "  'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHwwfHw%3D&w=1000&q=80', ",
+ "  'https://images.unsplash.com/photo-1561442748-c50715dc32f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw5MjU4MjM3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60', ",
+ "  'https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' ",
+ "]; ",
+ " ",
+ "List<Widget> cards = urls.map((url) => SwipeImage(url: url)).toList(); ",
+ " ",
+ "// -=-=--=- (Small Cards) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ",
+ "// List<Widget> cards = [ ",
+ "//   CardFb1( ",
+ "//       text: 'Explore', ",
+ "//       imageUrl: ",
+ "//           'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Working_late_re_0c3y%201.png?alt=media&token=7b880917-2390-4043-88e5-5d58a9d70555', ",
+ "//       subtitle: '+30 books', ",
+ "//       onPressed: () {}), ",
+ "//   CardFb1( ",
+ "//       text: 'Implore', ",
+ "//       imageUrl: ",
+ "//           'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Working_late_re_0c3y%201.png?alt=media&token=7b880917-2390-4043-88e5-5d58a9d70555', ",
+ "//       subtitle: '+30 books', ",
+ "//       onPressed: () {}), ",
+ "//   CardFb1( ",
+ "//       text: 'Deplore', ",
+ "//       imageUrl: ",
+ "//           'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Working_late_re_0c3y%201.png?alt=media&token=7b880917-2390-4043-88e5-5d58a9d70555', ",
+ "//       subtitle: '+30 books', ",
+ "//       onPressed: () {}), ",
+ "//     CardFb1( ",
+ "//       text: 'SeaFloor', ",
+ "//       imageUrl: ",
+ "//           'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Working_late_re_0c3y%201.png?alt=media&token=7b880917-2390-4043-88e5-5d58a9d70555', ",
+ "//       subtitle: '30 books', ",
+ "//       onPressed: () {}) ",
+ "// ]; ",
+ " ",
+ "class SwipeImage extends StatelessWidget { ",
+ "  final String url; ",
+ "  const SwipeImage({Key? key, required this.url}) : super(key: key); ",
+ " ",
+ "  @override ",
+ "  Widget build(BuildContext context) { ",
+ "    return Padding( ",
+ "      padding: const EdgeInsets.all(8.0), ",
+ "      child: ClipRRect( ",
+ "          borderRadius: BorderRadius.circular(20), ",
+ "          child: Container( ",
+ "            decoration: BoxDecoration( ",
+ "                image: DecorationImage( ",
+ "                    image: NetworkImage(url), ",
+ "                    fit: BoxFit.cover, ",
+ "                    alignment: Alignment(0.3, 0))), ",
+ "          )), ",
+ "    ); ",
+ "  } ",
+ "} ",
+ "class SwipeCardsFB extends StatefulWidget { ",
+ "  final int cardResetDuration; ",
+ "  final double maxTiltAngle; ",
+ "  final double sideSwipeSensitivity; ",
+ "  final double upSwipeSensitivity; ",
+ " ",
+ "  final Function onRightSwipe; ",
+ "  final Function onLeftSwipe; ",
+ "  final Function onUpSwipe; ",
+ "  final List<Widget> cards; ",
+ "  SwipeCardsFB({ ",
+ "    Key? key, ",
+ "    required this.cards, ",
+ "    required this.onRightSwipe, ",
+ "    required this.onLeftSwipe, ",
+ "    required this.onUpSwipe, ",
+ "    this.cardResetDuration = 400, //milliseconds ",
+ "    this.maxTiltAngle = 25, //degrees  ",
+ "    this.sideSwipeSensitivity = 100, //distance the user must swipe left or right for action ",
+ "    this.upSwipeSensitivity = 50, ",
+ "  }) : super(key: key); ",
+ "   ",
+ "  @override ",
+ "  _SwipeCardsFBState createState() => _SwipeCardsFBState(); ",
+ "} ",
+ " ",
+ "class _SwipeCardsFBState extends State<SwipeCardsFB> { ",
+ "  Offset _dragPosition = Offset.zero; ",
+ "  double _angle = 0; ",
+ " ",
+ "  Offset get dragPosition => _dragPosition; ",
+ " ",
+ "  bool _isDragging = false; ",
+ "  late Size _screenSize; ",
+ " ",
+ "  @override ",
+ "  Widget build(BuildContext context) { ",
+ "    _screenSize = MediaQuery.of(context).size; ",
+ "    return Stack( ",
+ "        children: cards.map<Widget>((widget) { ",
+ "      return widget == cards.last ? buildFrontCard(widget) : buildCard(widget); ",
+ "    }).toList()); ",
+ "  } ",
+ " ",
+ "  Widget buildCard(Widget card) => Container( ",
+ "        child: card, ",
+ "      ); ",
+ "  Widget buildFrontCard(Widget card) => GestureDetector( ",
+ "        child: LayoutBuilder(builder: (context, constraints) { ",
+ "          int duration; ",
+ "          if (_isDragging) { ",
+ "            //Since User is Dragging card, no animation is necessary, thus duration = 0) ",
+ "            duration = 0; ",
+ "          } else { ",
+ "            duration = widget ",
+ "                .cardResetDuration; //User has released card, animation required for card to fly away or reset to origin ",
+ "          } ",
+ " ",
+ "          //Creates Transform Matrix For Card Tilt and drag animation ",
+ "          final center = constraints.smallest.center(Offset.zero); ",
+ "          final radians = _toRadians(_angle); ",
+ "          final rotatedMatrix = Matrix4.identity() ",
+ "            ..translate(center.dx, center.dy) //centers the axis of rotation ",
+ "            ..rotateZ(radians) ",
+ "            ..translate(-center.dx, -center.dy) //reverts to original axis ",
+ "            ..translate(dragPosition.dx, dragPosition.dy); ",
+ " ",
+ "          return AnimatedContainer( ",
+ "              duration: Duration(milliseconds: duration), ",
+ "              transform: rotatedMatrix, ",
+ "              child: card); ",
+ "        }), ",
+ "        onPanUpdate: (details) { ",
+ "          setState(() { ",
+ "            _dragPosition += details.delta; ",
+ "            _angle = widget.maxTiltAngle * _dragPosition.dx / _screenSize.width; ",
+ "          }); ",
+ "        }, ",
+ "        onPanEnd: (details) async { ",
+ "          _isDragging = false; ",
+ " ",
+ "          if (_isUpSwipe(_dragPosition.dy, widget.upSwipeSensitivity)) { ",
+ "            _flyOutUp(); ",
+ "            widget.onUpSwipe(); ",
+ "            _toNextCard(); ",
+ "          } else if (_isRightSwipe( ",
+ "              _dragPosition.dx, widget.sideSwipeSensitivity)) { ",
+ "            _flyOutRight(); ",
+ "            widget.onRightSwipe(); ",
+ "            _toNextCard(); ",
+ "          } else if (_isLeftSwipe( ",
+ "              _dragPosition.dx, widget.sideSwipeSensitivity)) { ",
+ "            _flyOutLeft(); ",
+ "            widget.onLeftSwipe(); ",
+ "            _toNextCard(); ",
+ "          } else { ",
+ "            _resetPosition(); ",
+ "          } ",
+ "        }, ",
+ "        onPanStart: (details) { ",
+ "          setState(() { ",
+ "            _isDragging = true; ",
+ "          }); ",
+ "        }, ",
+ "      ); ",
+ " ",
+ "  void _toNextCard() async { ",
+ "    if (cards.isEmpty) return; ",
+ "    await Future.delayed(Duration(milliseconds: 400)); ",
+ " ",
+ "    cards.removeLast(); ",
+ "    setState(() { ",
+ "      _isDragging = true; ",
+ "    }); ",
+ "    _resetPosition(); ",
+ "  } ",
+ " ",
+ "  void _flyOutLeft() { ",
+ "    setState(() { ",
+ "      _angle = -widget.maxTiltAngle; ",
+ "      _dragPosition += Offset(-2 * _screenSize.width, 0); ",
+ "    }); ",
+ "  } ",
+ " ",
+ "  void _flyOutRight() { ",
+ "    setState(() { ",
+ "      _angle = widget.maxTiltAngle; ",
+ "      _dragPosition += Offset(2 * _screenSize.width, 0); ",
+ "    }); ",
+ "  } ",
+ " ",
+ "  void _flyOutUp() { ",
+ "    setState(() { ",
+ "      _dragPosition += Offset(0, -2 * _screenSize.height); ",
+ "    }); ",
+ "  } ",
+ " ",
+ "  double _toRadians(double degrees) { ",
+ "    return degrees * pi / 180; ",
+ "  } ",
+ " ",
+ "  bool _isRightSwipe(double dx, double sideSwipeSensitivity) { ",
+ "    return dx >= sideSwipeSensitivity; ",
+ "  } ",
+ " ",
+ "  bool _isLeftSwipe(double dx, double sideSwipeSensitivity) { ",
+ "    return dx <= -sideSwipeSensitivity; ",
+ "  } ",
+ " ",
+ "  bool _isUpSwipe(double dy, double upSwipeSensitivity) { ",
+ "    return dy <= -upSwipeSensitivity; ",
+ "  } ",
+ " ",
+ "  void _resetPosition() { ",
+ "    setState(() { ",
+ "      _dragPosition = Offset.zero; ",
+ "      _angle = 0; ",
+ "    }); ",
+ "  } ",
+ "} ",
+
+      ],
+        
+      "description": "card swip cards"
+  },
+
+
+
+
+
+
+  "card carousel cards" : {
+    "prefix": "-card carousel cards",
+    "scope": "dart",
+    "body": [
+
+
+ "      class CustomCarouselFB2 extends StatefulWidget { ",
+ "        const CustomCarouselFB2({Key? key}) : super(key: key); ",
+ "       ",
+ "        @override ",
+ "        _CustomCarouselFB2State createState() => _CustomCarouselFB2State(); ",
+ "      } ",
+ "       ",
+ "      class _CustomCarouselFB2State extends State<CustomCarouselFB2> { ",
+ "       ",
+ "        // - - - - - - - - - - - - Instructions - - - - - - - - - - - - - - ",
+ "        // 1.Replace cards list with whatever widgets you'd like.  ",
+ "        // 2.Change the widgetMargin attribute, to ensure good spacing on all screensize. ",
+ "        // 3.If you have a problem with this widget, please contact us at flutterbricks90@gmail.com ",
+ "        // Learn to build this widget at https://www.youtube.com/watch?v=dSMw1Nb0QVg! ",
+ "        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  ",
+ "         ",
+ "        List<Widget> cards = [ ",
+ "          CardFb1( ",
+ "              text: 'Explore', ",
+ "              imageUrl: ",
+ "                  'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Working_late_re_0c3y%201.png?alt=media&token=7b880917-2390-4043-88e5-5d58a9d70555',   ",
+ "              subtitle: '+30 books', ",
+ "              onPressed: () {}), ",
+ "          CardFb1( ",
+ "              text: 'Explore', ",
+ "              imageUrl: ",
+ "                  'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Designer_re_5v95%201.png?alt=media&token=5d053bd8-d0ea-4635-abb6-52d87539b7ec', ",
+ "              subtitle: '+30 books', ",
+ "              onPressed: () {}), ",
+ "          CardFb1( ",
+ "              text: 'Explore', ",
+ "              imageUrl: ",
+ "                  'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/illustrations%2Fundraw_Accept_terms_re_lj38%201.png?alt=media&token=476b97fd-ba66-4f62-94a7-bce4be794f36', ",
+ "              subtitle: '+30 books', ",
+ "              onPressed: () {}) ",
+ "        ]; ",
+ "       ",
+ "        final double carouselItemMargin = 16;  ",
+ "       ",
+ "        late PageController _pageController; ",
+ "        int _position = 0; ",
+ "       ",
+ "        @override ",
+ "        void initState() { ",
+ "          super.initState(); ",
+ "          _pageController = PageController(initialPage: 0, viewportFraction: .7); ",
+ "        } ",
+ "       ",
+ "        @override ",
+ "        Widget build(BuildContext context) { ",
+ "          return PageView.builder( ",
+ "              controller: _pageController, ",
+ "              itemCount: cards.length, ",
+ "              onPageChanged: (int position) { ",
+ "                setState(() { ",
+ "                  _position = position; ",
+ "                }); ",
+ "              }, ",
+ "              itemBuilder: (BuildContext context, int position) { ",
+ "                return imageSlider(position); ",
+ "              }); ",
+ "        } ",
+ "       ",
+ "        Widget imageSlider(int position) { ",
+ "          return AnimatedBuilder( ",
+ "            animation: _pageController, ",
+ "            builder: (BuildContext context, widget) { ",
+ "              return Container( ",
+ "                margin: EdgeInsets.all(carouselItemMargin), ",
+ "                child: Center(child: widget), ",
+ "              ); ",
+ "            }, ",
+ "            child: Container( ",
+ "              child: cards[position], ",
+ "            ), ",
+ "          ); ",
+ "        } ",
+ "      } ",
+ "       ",
+ "      class CardFb1 extends StatelessWidget { ",
+ "        final String text; ",
+ "        final String imageUrl; ",
+ "        final String subtitle; ",
+ "        final Function() onPressed; ",
+ "       ",
+ "        const CardFb1( ",
+ "            {required this.text, ",
+ "            required this.imageUrl, ",
+ "            required this.subtitle, ",
+ "            required this.onPressed, ",
+ "            Key? key}) ",
+ "            : super(key: key); ",
+ "       ",
+ "        @override ",
+ "        Widget build(BuildContext context) { ",
+ "          return GestureDetector( ",
+ "            onTap: onPressed, ",
+ "            child: Container( ",
+ "              width: 250, ",
+ "              height: 230, ",
+ "              padding: const EdgeInsets.all(30.0), ",
+ "              decoration: BoxDecoration( ",
+ "                color: Colors.white, ",
+ "                borderRadius: BorderRadius.circular(12.5), ",
+ "                boxShadow: [ ",
+ "                  BoxShadow( ",
+ "                      offset: const Offset(10, 20), ",
+ "                      blurRadius: 10, ",
+ "                      spreadRadius: 0, ",
+ "                      color: Colors.grey.withOpacity(.05)), ",
+ "                ], ",
+ "              ), ",
+ "              child: Column( ",
+ "                children: [ ",
+ "                  Image.network(imageUrl, height: 90, fit: BoxFit.cover), ",
+ "                  const Spacer(), ",
+ "                  Text(text, ",
+ "                      textAlign: TextAlign.center, ",
+ "                      style: const TextStyle( ",
+ "                        color: Colors.black, ",
+ "                        fontWeight: FontWeight.bold, ",
+ "                        fontSize: 18, ",
+ "                      )), ",
+ "                  const SizedBox( ",
+ "                    height: 5, ",
+ "                  ), ",
+ "                  Text( ",
+ "                    subtitle, ",
+ "                    textAlign: TextAlign.center, ",
+ "                    style: const TextStyle( ",
+ "                        color: Colors.grey, ",
+ "                        fontWeight: FontWeight.normal, ",
+ "                        fontSize: 12), ",
+ "                  ), ",
+ "                  const SizedBox( ",
+ "                    height: 10, ",
+ "                  ), ",
+ "                ], ",
+ "              ), ",
+ "            ), ",
+ "          ); ",
+ "        } ",
+ "      } ",
+      
+      
+
+],
+        
+"description": "card carousel cards"
+},
+
+
+"card credit card" : {
+  "prefix": "-card credit card",
+  "scope": "dart",
+  "body": [
+
+
+" //- - - - - - - - - Instructions - - - - - - - - - - - - - - - - - -  ",
+" // ",
+" // Default Widget call (instantiation):  ",
+" //  - CreditCard(onTopRightButtonClicked: () {}, cardIcon: Image.network('https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/mastercard.png?alt=media&token=1ae51e14-5a60-4dbf-8a42-47cb9c3c1dfe',  width: 50,))  ",
+" // ",
+" // Coming Soon: ",
+" //  - integration into a a card stack ",
+" // ",
+" //- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - ",
+"  ",
+" class CreditCard extends StatelessWidget { ",
+"   final String balance; ",
+"   final String cardNumber; ",
+"   final Function onTopRightButtonClicked; ",
+"   final Gradient backgroundGradient; ",
+"   final Widget ",
+"       cardIcon; //Should be an Image.network(...) or Image.asset(...) Widget ",
+"  ",
+"   const CreditCard({ ",
+"     Key? key, ",
+"     required this.onTopRightButtonClicked, ",
+"     required this.cardIcon, ",
+"     this.balance = '2,850.00$', ",
+"     this.cardNumber = '****  ****  ****  3799', ",
+"     this.backgroundGradient = ",
+"         const LinearGradient(colors: [Colors.black87, Colors.black54]), ",
+"   }) : super(key: key); ",
+"  ",
+"   @override ",
+"   Widget build(BuildContext context) { ",
+"     return Container( ",
+"       width: MediaQuery.of(context).size.width, ",
+"       height: MediaQuery.of(context).size.height / 4, ",
+"       decoration: BoxDecoration( ",
+"         borderRadius: BorderRadius.circular(15.0), ",
+"         gradient: backgroundGradient, ",
+"         boxShadow: [ ",
+"           BoxShadow( ",
+"             color: Colors.black.withOpacity(.25), ",
+"             offset: Offset(0, 15), ",
+"             blurRadius: 45, ",
+"           ) ",
+"         ], ",
+"       ), ",
+"       child: Stack( ",
+"         children: [ ",
+"           Align( ",
+"             alignment: Alignment.topRight, ",
+"             child: Padding( ",
+"               padding: const EdgeInsets.all(5.0), ",
+"               child: IconButton( ",
+"                 icon: Icon( ",
+"                   Icons.more_horiz, ",
+"                   color: Colors.white, ",
+"                   size: 30, ",
+"                 ), ",
+"                 onPressed: () { ",
+"                   onTopRightButtonClicked(); ",
+"                 }, ",
+"               ), ",
+"             ), ",
+"           ), ",
+"           Align( ",
+"               alignment: Alignment.bottomRight, ",
+"               child: Padding( ",
+"                 padding: const EdgeInsets.all(15.0), ",
+"                 child: Row( ",
+"                   mainAxisAlignment: MainAxisAlignment.spaceBetween, ",
+"                   children: [ ",
+"                     Text( ",
+"                       cardNumber, ",
+"                       style: TextStyle( ",
+"                           fontSize: 18, ",
+"                           fontWeight: FontWeight.normal, ",
+"                           color: Colors.white), ",
+"                     ), ",
+"                     Image.network( ",
+"                       'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/mastercard.png?alt=media&token=1ae51e14-5a60-4dbf-8a42-47cb9c3c1dfe', ",
+"                       width: 50, ",
+"                     ), ",
+"                   ], ",
+"                 ), ",
+"               )), ",
+"           Align( ",
+"             alignment: Alignment.centerLeft, ",
+"             child: Padding( ",
+"               padding: const EdgeInsets.all(15.0), ",
+"               child: Column( ",
+"                 crossAxisAlignment: CrossAxisAlignment.start, ",
+"                 mainAxisSize: MainAxisSize.min, ",
+"                 children: [ ",
+"                   Text( ",
+"                     balance, ",
+"                     style: TextStyle( ",
+"                         fontSize: 36, ",
+"                         fontWeight: FontWeight.bold, ",
+"                         color: Colors.white), ",
+"                   ), ",
+"                   Text( ",
+"                     'Balance', ",
+"                     style: TextStyle( ",
+"                         fontSize: 18, ",
+"                         fontWeight: FontWeight.normal, ",
+"                         color: Colors.grey[400]), ",
+"                   ), ",
+"                 ], ",
+"               ), ",
+"             ), ",
+"           ) ",
+"         ], ",
+"       ), ",
+"     ); ",
+"   } ",
+" } ",
+
+
+      
+],
+        
+"description": "card credit cards"
+},
+
+
+// 21 drawer
+
+      "drawer" : {
+        "prefix": "-drawer",
+        "scope": "dart",
+        "body": [
+
+"          class DrawerFb1 extends StatelessWidget { ",
+"            @override ",
+"            Widget build(BuildContext context) { ",
+"           ",
+"              return Drawer( ",
+"                  child: Material( ",
+"                    color: Color(0xff4338CA), ",
+"                    child: ListView( ",
+"                      children: <Widget>[ ",
+"                        Container( ",
+"                          padding: EdgeInsets.all(15.0), ",
+"                          child: Column( ",
+"                            children: [ ",
+"                              const SizedBox(height: 12), ",
+"                              SearchFieldDrawer(), ",
+"                              const SizedBox(height: 12), ",
+"                              MenuItem( ",
+"                                text: 'Friends', ",
+"                                icon: Icons.people, ",
+"                                onClicked: () => selectedItem(context, 0), ",
+"                              ), ",
+"                              const SizedBox(height: 5), ",
+"                              MenuItem( ",
+"                                text: 'Liked Photos', ",
+"                                icon: Icons.favorite_border, ",
+"                                onClicked: () => selectedItem(context, 1), ",
+"                              ), ",
+"                              const SizedBox(height: 5), ",
+"                              MenuItem( ",
+"                                text: 'Workflow', ",
+"                                icon: Icons.workspaces_outline, ",
+"                                onClicked: () => selectedItem(context, 2), ",
+"                              ), ",
+"                              const SizedBox(height: 5), ",
+"                              MenuItem( ",
+"                                text: 'Updates', ",
+"                                icon: Icons.update, ",
+"                                onClicked: () => selectedItem(context, 3), ",
+"                              ), ",
+"                              const SizedBox(height: 8), ",
+"                              Divider(color: Colors.white70), ",
+"                              const SizedBox(height: 8), ",
+"                              MenuItem( ",
+"                                text: 'Notifications', ",
+"                                icon: Icons.notifications_outlined, ",
+"                                onClicked: () => selectedItem(context, 5), ",
+"                              ), ",
+"                              MenuItem( ",
+"                                text: 'Settings', ",
+"                                icon: Icons.settings, ",
+"                                onClicked: () => selectedItem(context, 6), ",
+"                              ), ",
+"                            ], ",
+"                          ), ",
+"                        ), ",
+"                      ], ",
+"                    ), ",
+"                  ), ",
+"              ); ",
+"            } ",
+"           ",
+"           ",
+"           ",
+"            void selectedItem(BuildContext context, int index) { ",
+"              Navigator.of(context).pop(); ",
+"              switch (index) { ",
+"                case 0: ",
+"                  Navigator.of(context).push(MaterialPageRoute( ",
+"                    builder: (context) => Scaffold(), // Page 1 ",
+"                  )); ",
+"                  break; ",
+"                case 1: ",
+"                  Navigator.of(context).push(MaterialPageRoute( ",
+"                    builder: (context) => Scaffold(), // Page 2 ",
+"                  )); ",
+"                  break; ",
+"              } ",
+"            } ",
+"          } ",
+"          class MenuItem extends StatelessWidget { ",
+"            final String text; ",
+"            final IconData icon; ",
+"            final VoidCallback? onClicked; ",
+"             ",
+"            const MenuItem({required this.text, ",
+"              required this.icon, ",
+"              this.onClicked,Key? key, }) : super(key: key); ",
+"           ",
+"            @override ",
+"            Widget build(BuildContext context) { ",
+"              final color = Colors.white; ",
+"              final hoverColor = Colors.white70; ",
+"           ",
+"              return ListTile( ",
+"                leading: Icon(icon, color: color), ",
+"                title: Text(text, style: TextStyle(color: color)), ",
+"                hoverColor: hoverColor, ",
+"                onTap: onClicked, ",
+"              ); ",
+"            } ",
+"          } ",
+"          class SearchFieldDrawer extends StatelessWidget { ",
+"            const SearchFieldDrawer({Key? key}) : super(key: key); ",
+"           ",
+"            @override ",
+"            Widget build(BuildContext context) { ",
+"              final color = Colors.white; ",
+"           ",
+"              return TextField( ",
+"                style: TextStyle(color: color,fontSize: 14), ",
+"                decoration: InputDecoration( ",
+"                  contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 5), ",
+"                  hintText: 'Search',",
+"                  hintStyle: TextStyle(color: color),",
+"                  prefixIcon: Icon(Icons.search, color: color,size: 20,),",
+"                  filled: true,",
+"                  fillColor: Colors.white12,",
+"                  enabledBorder: OutlineInputBorder(",
+"                    borderRadius: BorderRadius.circular(15),",
+"                    borderSide: BorderSide(color: color.withOpacity(0.7)),",
+"                  ),",
+"                  focusedBorder: OutlineInputBorder(",
+"                    borderRadius: BorderRadius.circular(15),",
+"                    borderSide: BorderSide(color: color.withOpacity(0.7)),",
+"                  ),",
+"                ),",
+"              );",
+"            }",
+
+          
+          
+      ],
+        
+        "description": "Drawer"
+      },
+
+
+  
+
+
+
+
+
+
+        
+  // 22
+
+  "navigation page no" : {
+    "prefix": "-navigation page no btn",
+    "scope": "dart",
+    "body": [
+
+
+  "    class PageSelector extends StatefulWidget {",
+  "      final List<String> textArray;",
+  "      final Function(int) onChange;",
+  "    ",
+  "      PageSelector({required this.textArray, required this.onChange, Key? key})",
+  "          : super(key: key);",
+  "    ",
+  "      @override",
+  "      State<PageSelector> createState() => _PageSelectorState();",
+  "    }",
+  "    ",
+  "    class _PageSelectorState extends State<PageSelector> {",
+  "      int _currentIndex = 0;",
+  "    ",
+  "      @override",
+  "      Widget build(BuildContext context) {",
+  "        return Container(",
+  "          decoration: BoxDecoration(color: Colors.grey.shade200),",
+  "          child: Row(",
+  "            mainAxisAlignment: MainAxisAlignment.spaceBetween,",
+  "            children: [",
+  "              CircularArrow(",
+  "                  icon: Icon(",
+  "                    Icons.keyboard_arrow_left,",
+  "                    color: Colors.white,",
+  "                  ),",
+  "                  onPressed: () {",
+  "                    if (_currentIndex <= 0) {",
+  "                      return;",
+  "                    }",
+  "                    widget.onChange(_currentIndex);",
+  "                    setState(() {",
+  "                      _currentIndex -= 1;",
+  "                    });",
+  "                  }),",
+  "              Text(",
+  "                widget.textArray[_currentIndex],",
+  "                style: TextStyle(fontWeight: FontWeight.bold),",
+  "              ),",
+  "              CircularArrow(",
+  "                  icon: Icon(",
+  "                    Icons.keyboard_arrow_right,",
+  "                    color: Colors.white,",
+  "                  ),",
+  "                  onPressed: () {",
+  "                    if (_currentIndex >= widget.textArray.length - 1) {",
+  "                      return;",
+  "                    }",
+  "                    widget.onChange(_currentIndex);",
+  "                    setState(() {",
+  "                      _currentIndex += 1;",
+  "                    });",
+  "                  }),",
+  "            ],",
+  "          ),",
+  "        );",
+  "      }",
+  "    }",
+  "    class CircularArrow extends StatelessWidget {",
+  "      final Icon icon;",
+  "      final Function() onPressed;",
+  "      const CircularArrow({required this.icon, required this.onPressed, Key? key})",
+  "          : super(key: key);",
+  "    ",
+  "      @override",
+  "      Widget build(BuildContext context) {",
+  "        return IconButton(",
+  "          onPressed: onPressed,",
+  "          icon: CircleAvatar(backgroundColor: Colors.blue, child: icon),",
+  "          iconSize: 25,",
+  "        );",
+  "      }",
+  "    }",
+      
+      
+      
+  ],
+    
+    "description": "navigation page no btn Like 12345 next"
+  },
+
+
+ 
+
+
+
+
+
+
+        
+  // 23
+
+  "circle avtar" : {
+    "prefix": "-circleavatar",
+    "scope": "dart",
+    "body": [
+
+
+"      class CircleAvatarWithTransition extends StatelessWidget { ",
+"        /// the base color of the images background and its concentric circles. ",
+"        final Color primaryColor; ",
+"       ",
+"        /// the profile image to be displayed. ",
+"        final ImageProvider image; ",
+"       ",
+"        ///the diameter of the entire widget, including the concentric circles. ",
+"        final double size; ",
+"       ",
+"        /// the width between the edges of each concentric circle. ",
+"        final double transitionBorderwidth; ",
+"       ",
+"        const CircleAvatarWithTransition( ",
+"            {Key? key, ",
+"            required Color this.primaryColor, ",
+"            required ImageProvider this.image, ",
+"            this.size = 190.0, ",
+"            this.transitionBorderwidth = 20.0}) ",
+"            : super(key: key); ",
+"        @override ",
+"        Widget build(BuildContext context) { ",
+"          return Stack( ",
+"            alignment: AlignmentDirectional.center, ",
+"            children: <Widget>[ ",
+"              Container( ",
+"                  child: Container( ",
+"                height: size, ",
+"                width: size, ",
+"                decoration: BoxDecoration( ",
+"                    shape: BoxShape.circle, color: primaryColor.withOpacity(0.05)),  ",
+"              )), ",
+"              Container( ",
+"                child: Container( ",
+"                    height: size - transitionBorderwidth, ",
+"                    width: size - transitionBorderwidth, ",
+"                    decoration: BoxDecoration( ",
+"                      shape: BoxShape.circle, ",
+"                      gradient: RadialGradient( ",
+"                          stops: [0.01, 0.5], ",
+"                          colors: [Colors.white, primaryColor.withOpacity(0.1)]), ",
+"                    )), ",
+"              ), ",
+"              Container( ",
+"                child: Container( ",
+"                    height: size - (transitionBorderwidth * 2), ",
+"                    width: size - (transitionBorderwidth * 2), ",
+"                    decoration: BoxDecoration( ",
+"                        shape: BoxShape.circle, ",
+"                        color: primaryColor.withOpacity(0.4))), ",
+"              ), ",
+"              Container( ",
+"                child: Container( ",
+"                    height: size - (transitionBorderwidth * 3), ",
+"                    width: size - (transitionBorderwidth * 3), ",
+"                    decoration: BoxDecoration( ",
+"                        shape: BoxShape.circle, ",
+"                        color: primaryColor.withOpacity(0.5))), ",
+"              ), ",
+"              Container( ",
+"                  child: Container( ",
+"                      height: size - (transitionBorderwidth * 4), ",
+"                      width: size - (transitionBorderwidth * 4), ",
+"                      decoration: BoxDecoration( ",
+"                          shape: BoxShape.circle, ",
+"                          image: DecorationImage(fit: BoxFit.cover, image: image)))) ",
+"            ], ",
+"          ); ",
+"        } ",
+"      } ",
+      
+      
+      
+      
+      
+  ],
+    
+    "description": "circle avatar with radius transion animations Like Waves Like Circles"
+  },
+
+
+
+
+  // 24
+
+  "simple Alerts" : {
+    "prefix": "-alert simple",
+    "scope": "dart",
+    "body": [
+
+
+"      class AlertDialogFb1 extends StatelessWidget { ",
+"        final String title; ",
+"        final String description; ",
+"       ",
+"        final List<TextButton> actions; ",
+"       ",
+"        const AlertDialogFb1({required this.title, required this.description, required this.actions, Key? key}) : super(key: key);  ",
+"       ",
+"        @override ",
+"        Widget build(BuildContext context) { ",
+"          return AlertDialog( ",
+"            title: Text(title), ",
+"            content: ",
+"                Text(description), ",
+"            actions: actions, ",
+"          ); ",
+"        } ",
+"      } ",
+      
+    
+      
+  ],
+    
+    "description": "simple Alerts"
+  },
+
+
+
+  "Alerts cupertino" : {
+    "prefix": "-alert cupertino",
+    "scope": "dart",
+    "body": [
+
+
+"      showCupertinoDialog( ",
+"      context: context, ",
+"      builder: (BuildContext context) { ",
+"        return CupertinoAlertDialog( ",
+"          title: const Text('IoS Alert'), ",
+"          actions: [ ",
+"            const CupertinoButton(onPressed: null, child: Text('yes')),  ",
+"            CupertinoButton.filled( ",
+"                onPressed: () { ",
+"                  Navigator.pop(context); ",
+"                }, ",
+"                child: const Icon(Icons.cancel)), ",
+"          ], ",
+"          insetAnimationCurve: Curves.slowMiddle, ",
+"          insetAnimationDuration: const Duration(seconds: 2), ",
+"        ); ",
+"      }); ",
+      
+    
+      
+  ],
+    
+    "description": "Alert cupertino"
+  },
+
+
+
+
+  "alerts actions buttons" : {
+    "prefix": "-alert with actions buttons",
+    "scope": "dart",
+    "body": [
+
+
+"      class DialogFb1 extends StatelessWidget { ",
+"        const DialogFb1({Key? key}) : super(key: key); ",
+"        final primaryColor = const Color(0xff4338CA); ",
+"        final accentColor = const Color(0xffffffff); ",
+"       ",
+"         ",
+"        @override ",
+"        Widget build(BuildContext context) { ",
+"          return Dialog( ",
+"            elevation: 1, ",
+"            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), ",
+"            child: Container( ",
+"              width: MediaQuery.of(context).size.width / 1.4, ",
+"              height: MediaQuery.of(context).size.height / 4, ",
+"              decoration: BoxDecoration( ",
+"                  color: Colors.white, ",
+"                  borderRadius: BorderRadius.circular(15.0), ",
+"                  boxShadow: [ ",
+"                    BoxShadow( ",
+"                        offset: const Offset(12, 26), ",
+"                        blurRadius: 50, ",
+"                        spreadRadius: 0, ",
+"                        color: Colors.grey.withOpacity(.1)), ",
+"                  ]), ",
+"              child: Column( ",
+"                mainAxisAlignment: MainAxisAlignment.center, ",
+"                children: [ ",
+"                  CircleAvatar( ",
+"                    backgroundColor: primaryColor, ",
+"                    radius: 25, ",
+"                    child: Image.network( ",
+"                        'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/FlutterBricksLogo-Med.png?alt=media&token=7d03fedc-75b8-44d5-a4be-c1878de7ed52'),  ",
+"                  ), ",
+"                  const SizedBox( ",
+"                    height: 15, ",
+"                  ), ",
+"                  const Text('How are you doing?', ",
+"                      style: TextStyle( ",
+"                          color: Colors.black, ",
+"                          fontSize: 18, ",
+"                          fontWeight: FontWeight.bold)), ",
+"                  const SizedBox( ",
+"                    height: 3.5, ",
+"                  ), ",
+"                  const Text('This is a sub text, use it to clarify', ",
+"                      style: TextStyle( ",
+"                          color: Colors.grey, ",
+"                          fontSize: 12, ",
+"                          fontWeight: FontWeight.w300)), ",
+"                  const SizedBox( ",
+"                    height: 15, ",
+"                  ), ",
+"                  Row( ",
+"                    mainAxisAlignment: MainAxisAlignment.spaceEvenly, ",
+"                    children: [ ",
+"                      SimpleBtn1(text: 'Great', onPressed: () {}), ",
+"                      SimpleBtn1( ",
+"                        text: 'Not bad', ",
+"                        onPressed: () { ",
+"                        }, ",
+"                        invertedColors: true, ",
+"                      ), ",
+"                    ], ",
+"                  ) ",
+"                ], ",
+"              ), ",
+"            ), ",
+"          ); ",
+"        } ",
+"      } ",
+"       ",
+"      class SimpleBtn1 extends StatelessWidget { ",
+"        final String text; ",
+"        final Function() onPressed; ",
+"        final bool invertedColors; ",
+"        const SimpleBtn1( ",
+"            {required this.text, ",
+"            required this.onPressed, ",
+"            this.invertedColors = false, ",
+"            Key? key}) ",
+"            : super(key: key); ",
+"        final primaryColor = const Color(0xff4338CA); ",
+"        final accentColor = const Color(0xffffffff); ",
+"       ",
+"        @override ",
+"        Widget build(BuildContext context) { ",
+"          return ElevatedButton( ",
+"              style: ButtonStyle( ",
+"                  elevation: MaterialStateProperty.all(0), ",
+"                  alignment: Alignment.center, ",
+"                  side: MaterialStateProperty.all( ",
+"                      BorderSide(width: 1, color: primaryColor)), ",
+"                  padding: MaterialStateProperty.all( ",
+"                      const EdgeInsets.only(right: 25, left: 25, top: 0, bottom: 0)), ",
+"                  backgroundColor: MaterialStateProperty.all( ",
+"                      invertedColors ? accentColor : primaryColor), ",
+"                  shape: MaterialStateProperty.all( ",
+"                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), ",
+"                  )), ",
+"              onPressed: onPressed, ",
+"              child: Text( ",
+"                text, ",
+"                style: TextStyle( ",
+"                    color: invertedColors ? primaryColor : accentColor, fontSize: 16), ",
+"              )); ",
+"        } ",
+"      } ",
+      
+
+      
+    
+      
+  ],
+    
+    "description": "alert with actions buttons"
+  },
+
+
+
+
+  "alerts gradient" : {
+    "prefix": "-alert gradient",
+    "scope": "dart",
+    "body": [
+
+
+
+ "     class DialogFb3 extends StatelessWidget { ",
+ "       const DialogFb3({Key? key}) : super(key: key); ",
+ "      ",
+ "       final primaryColor = const Color(0xff4338CA); ",
+ "       final secondaryColor = const Color(0xff6D28D9); ",
+ "       final accentColor = const Color(0xffffffff); ",
+ "       final backgroundColor = const Color(0xffffffff); ",
+ "       final errorColor = const Color(0xffEF4444); ",
+ "      ",
+ "       @override ",
+ "       Widget build(BuildContext context) { ",
+ "         return Dialog( ",
+ "           elevation: 1, ",
+ "           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), ",
+ "           child: Container( ",
+ "             width: MediaQuery.of(context).size.width / 1.5, ",
+ "             height: MediaQuery.of(context).size.height / 5, ",
+ "             decoration: BoxDecoration( ",
+ "               gradient: LinearGradient(colors:[primaryColor, secondaryColor]), ",
+ "                 borderRadius: BorderRadius.circular(15.0), ",
+ "                 boxShadow: [ ",
+ "                   BoxShadow( ",
+ "                       offset: const Offset(12, 26), ",
+ "                       blurRadius: 50, ",
+ "                       spreadRadius: 0, ",
+ "                       color: Colors.grey.withOpacity(.1)), ",
+ "                 ]), ",
+ "             child: Column( ",
+ "               mainAxisAlignment: MainAxisAlignment.center, ",
+ "               children: [ ",
+ "                 CircleAvatar( ",
+ "                   backgroundColor: accentColor.withOpacity(.05), ",
+ "                   radius: 25, ",
+ "                   child: Image.network( ",
+ "                       'https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/FlutterBricksLogo-Med.png?alt=media&token=7d03fedc-75b8-44d5-a4be-c1878de7ed52'),   ",
+ "                 ), ",
+ "                 const SizedBox( ",
+ "                   height: 15, ",
+ "                 ), ",
+ "                  Text('How are you doing?', ",
+ "                     style: TextStyle( ",
+ "                         color: accentColor, ",
+ "                         fontSize: 18, ",
+ "                         fontWeight: FontWeight.bold)), ",
+ "                 const SizedBox( ",
+ "                   height: 3.5, ",
+ "                 ), ",
+ "                  Text('This is a sub text, use it to clarify', ",
+ "                     style: TextStyle( ",
+ "                         color: accentColor, ",
+ "                         fontSize: 12, ",
+ "                         fontWeight: FontWeight.w300)), ",
+ "                 const SizedBox( ",
+ "                   height: 15, ",
+ "                 ), ",
+ "               ], ",
+ "             ), ",
+ "           ), ",
+ "         ); ",
+ "       } ",
+ "     } ",
+      
+    
+      
+  ],
+    
+    "description": "alert simple with gradients background"
+  },
+
+
+
+  // 25
+
+
+  "time picker material 1" : {
+    "prefix": "-time picker 1",
+    "scope": "dart",
+    "body": [
+
+
+"      /* Call when you want to show the time picker */ ",
+" final DateTime? newDate = await showDatePicker( ",
+" context: context, ",
+" initialDate: DateTime(2020, 11, 17), ",
+" firstDate: DateTime(2017, 1), ",
+" lastDate: DateTime(2022, 7), ",
+" helpText: 'Select a date', ",
+" ); ",
+    
+      
+  ],
+    
+    "description": "time picker material 1"
+  },
+
+
+
+  "time picker 2" : {
+    "prefix": "-time picker 2",
+    "scope": "dart",
+    "body": [
+
+
+"      Column( ",
+"      children: [ ",
+"        /* make a datetime var OR Paste On Override:  ",
+"          DateTime datepicker = DateTime.now(); */ ",
+"        Text( ",
+"            'Date is: ${datepicker.year} - ${datepicker.month} - ${datepicker.day} '), ",
+"        /* if need time  ",
+"        Text( ",
+"            'Time Is: ${datepicker.hour} : ${datepicker.minute} : ${datepicker.second}'), */  ",
+"        ElevatedButton( ",
+"          onPressed: () async { ",
+"            /* if need time picker Wrap : showTimePicker */ ",
+"            var getdates = await showDatePicker( ",
+"              context: context, ",
+"              initialDate: datepicker, ",
+"              firstDate: DateTime(2000), ",
+"              lastDate: DateTime(3000), ",
+"            ); ",
+"            if (getdates != null) { ",
+"              setState(() { ",
+"                datepicker = getdates; ",
+"              }); ",
+"            } ",
+"          }, ",
+"          child: Icon(Icons.more_time), ",
+"        ), ",
+"      ], ",
+"    ), ",
+
+    
+      
+  ],
+    
+    "description": "time picker 2"
+  },
+
+
+
+  "date picker" : {
+    "prefix": "-date picker",
+    "scope": "dart",
+    "body": [
+
+"      Column( ",
+"      children: [ ",
+"        /* make a datetime var OR Paste On Override:  ",
+"            DateTimeRange vardaterange = ",
+"      DateTimeRange(start: DateTime.now(), end: DateTime.now()); */  ",
+"        Text('Date is: ${viewardaterange.duration.inDays}'), ",
+"        ElevatedButton( ",
+"            onPressed: () async { ",
+"              DateTimeRange? getrange = await showDateRangePicker( ",
+"                  context: context, ",
+"                  firstDate: DateTime(2000), ",
+"                  lastDate: DateTime(2023)); ",
+"              if (getrange != null) { ",
+"                setState(() { ",
+"                  viewardaterange = getrange; ",
+"                }); ",
+"              } ",
+"            }, ",
+"            child: Text(' Select Date Range Picker')), ",
+"      ], ",
+"    ), ",
+
+    
+      
+  ],
+    
+    "description": "date picker"
+  },
+
+
+
+
+
+  // 26
+
+  "background box type gradient" : {
+    "prefix": "-background box type gradient",
+    "scope": "dart",
+    "body": [
+
+
+"      class BackgroundImageFb1 extends StatelessWidget { ",
+"        final Widget child; ",
+"        final String imageUrl; ",
+"        const BackgroundImageFb1( ",
+"            {required this.child, required this.imageUrl, Key? key}) ",
+"            : super(key: key); ",
+"       ",
+"        @override ",
+"        Widget build(BuildContext context) { ",
+"          return Container( ",
+"            // Place as the child widget of a scaffold ",
+"            width: double.infinity, ",
+"            height: double.infinity, ",
+"            decoration: BoxDecoration( ",
+"              image: DecorationImage( ",
+"                image: NetworkImage(imageUrl), ",
+"                fit: BoxFit.cover, ",
+"              ), ",
+"            ), ",
+"            child: child, ",
+"          ); ",
+"        } ",
+"      } ",
+    
+      
+  ],
+    
+    "description": "box type background gradient"
+  },
+
+
+
+
+  // 27
+
+  " theme " : {
+    "prefix": "-theme light dark",
+    "scope": "dart",
+    "body": [
+
+
+ "     ThemeData lightthemef() { ",
+ "       return ThemeData( ",
+ "         floatingActionButtonTheme: const FloatingActionButtonThemeData( ",
+ "             backgroundColor: Color.fromARGB(76, 59, 2, 145)), ",
+ "         primarySwatch: Colors.indigo, ",
+ "         scaffoldBackgroundColor: const Color.fromARGB(14, 4, 1, 44), ",
+ "         backgroundColor: Colors.red, ",
+ "         // cardColor: Color.fromARGB(215, 229, 171, 239).withOpacity(0. 4),",
+ "         colorScheme: const ColorScheme.light( ",
+ "             background: Color.fromARGB(190, 176, 134, 255), ",
+ "             primaryContainer: Color.fromARGB(191, 248, 247, 250)), ",
+ "       ); ",
+ "     } ",
+ "      ",
+ "     ThemeData darkthemef() { ",
+ "       return ThemeData( ",
+ "         brightness: Brightness.dark, ",
+ "         primarySwatch: Colors.cyan, ",
+ "         appBarTheme: const AppBarTheme( ",
+ "           color: Color.fromARGB(255, 0, 159, 135), ",
+ "         ), ",
+ "         colorScheme: const ColorScheme.dark( ",
+ "             background: Color.fromARGB(216, 3, 137, 117), ",
+ "             primaryContainer: Color.fromARGB(142, 0, 0, 0)), ",
+ "       ); ",
+ "     } ",
+ "     // second type is: ",
+ "     ThemeData.light.copywith(){} ",
+    
+      
+  ],
+    
+    "description": "theme light dark"
+  },
+
+
+
+
+
+  // 28
+
+  "list view reorder able" : {
+    "prefix": "-list view reorder able",
+    "scope": "dart",
+    "body": [
+
+
+ "  /* make a list generater ",
+ "     or paste it on override */ ",
+ "     final List<int> items = List<int>.generate(15, ((int index) => index));  ",
+ "  /* need child */  ",
+ "               ",
+ "              ReorderableListView( ",
+ "     children: List.generate( ",
+ "       items.length, ",
+ "       (index) => ListTile( ",
+ "         key: Key('$index'), ",
+ "         leading: Icon(Icons.person), ",
+ "         tileColor: ",
+ "             items[index].isOdd ? Colors.orangeAccent : Colors.cyanAccent, ",
+ "         title: Text('items is ${items[index]}'), ",
+ "         trailing: Icon(Icons.drag_handle), ",
+ "       ), ",
+ "     ), ",
+ "     onReorder: (int oldindex, int newIndex) { ",
+ "       setState(() { ",
+ "         if (oldindex < newIndex) { ",
+ "           newIndex -= 1; ",
+ "         } ",
+ "         // delete old index loc ",
+ "         int itemindex = items.removeAt(oldindex); ",
+ "         // set new loc by index ",
+ "         items.insert(newIndex, itemindex); ",
+ "       }); ",
+ "     }, ",
+ "   ); ",
+
+    
+      
+  ],
+    
+    "description": "reorder able list view"
+  },
+
+
+  // 29
+
+  "navigation" : {
+    "prefix": "-navigation route to page",
+    "scope": "dart",
+    "body": [
+
+"      Navigator.push( ",
+"      context, ",
+"      MaterialPageRoute(builder: (context) => Openchat()), ",
+"    ); ",
+    
+  ],
+    
+    "description": "navigation to others page"
+  },
+
+
+
+
+
+
+  // 30
+
+  "layout builder" : {
+    "prefix": "-layout builder",
+    "scope": "dart",
+    "body": [
+
+ "     return LayoutBuilder( ",
+ "     builder: (BuildContext context, BoxConstraints constraints) { ",
+ "   if (constraints.maxWidth <= 424) { ",
+ "     return const Phome(); ",
+ "   } else if (constraints.maxWidth >= 424 && constraints.maxWidth <= 1024) {  ",
+ "     return const Thome(); ",
+ "   } else { ",
+ "     return const Dhome(); ",
+ "   } ",
+ " }); ",
+
+
+
+  ],
+    
+    "description": "layout builder and landscape modes"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+// replace name //
+
+// -drawer call globaly
+// materialappbody
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
